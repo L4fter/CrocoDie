@@ -21,9 +21,9 @@
             }
         }
 
-        public void OpenCrocoMouth()
+        public void LowKick()
         {
-            anim.SetBool("Open", true);
+            anim.SetTrigger("MakeMove");
         }
 
         public void CloseCrocoMouth()
