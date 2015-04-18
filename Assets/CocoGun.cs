@@ -14,14 +14,13 @@ public class CocoGun : MonoBehaviour
 
     private GameController game;
 
-    private NetworkView networkView;
+    public NetworkView networkView;
 
 
 	// Use this for initialization
 	void Start ()
 	{
 	    game = GameController.Instance;
-        networkView = new NetworkView();
 	}
 	
 	// Update is called once per frame

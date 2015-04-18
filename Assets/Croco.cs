@@ -56,7 +56,6 @@ public class Croco : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-        Debug.Log(game.PlayerControlsCroco);
 	    if (!game.PlayerControlsCroco)
 	    {
 	        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
