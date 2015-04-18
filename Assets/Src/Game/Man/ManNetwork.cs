@@ -42,7 +42,6 @@
         [RPC]
         public void Kick(string message)
         {
-            Debug.Log("NetWork kick...");
             SendMessage(message);
         }
     }
