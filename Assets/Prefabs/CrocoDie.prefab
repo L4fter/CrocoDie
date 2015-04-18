@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &110206
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 431688}
+  - 61: {fileID: 6160562}
+  - 50: {fileID: 5098730}
+  - 114: {fileID: 11464116}
+  m_Layer: 0
+  m_Name: WeaponUp
+  m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &121346
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,7 +68,7 @@ GameObject:
   - 50: {fileID: 5034368}
   - 114: {fileID: 11487852}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Shield
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +80,18 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0219999999, y: .377000004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 471372}
+  m_RootOrder: 1
+--- !u!4 &431688
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .49000001, y: .620000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -91,6 +121,7 @@ Transform:
   m_LocalPosition: {x: .400000006, y: .600000024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 431688}
   - {fileID: 426934}
   m_Father: {fileID: 455266}
   m_RootOrder: 0
@@ -124,13 +155,41 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
+--- !u!50 &5098730
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110206}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &6155972
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189404}
-  m_Enabled: 1
+  m_Enabled: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .0515085608, y: .0234131515}
+  serializedVersion: 2
+  m_Size: {x: .705467939, y: .64974308}
+--- !u!61 &6160562
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110206}
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -150,6 +209,19 @@ BoxCollider2D:
   m_Offset: {x: .430000007, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.31999993, y: .3125}
+--- !u!114 &11464116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be0b37f13e1c2d44bf8cdc4f2593dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  component: {fileID: 6160562}
+  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &11471982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +236,7 @@ MonoBehaviour:
   MyCroco: {fileID: 11496722}
   RowDeltaSpeed: 2
   Health: 0
-  WeaponCollider: {fileID: 6155972}
+  WeaponColliders: []
 --- !u!114 &11487852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 6155972}
+  color: {r: .105428189, g: .95588237, b: .428014278, a: 1}
 --- !u!114 &11491256
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,6 +4,8 @@ public class WeaponHelper : MonoBehaviour
 {
 	public Collider2D component;
 
+	public Color color;
+
 	// Use this for initialization
 	private void Start()
 	{
@@ -19,7 +21,7 @@ public class WeaponHelper : MonoBehaviour
 		if (this.component.enabled)
 		{
 			var color = Gizmos.color;
-			Gizmos.color = new Color(1, 0, 0, 1);
+			Gizmos.color = this.color;
 			Gizmos.DrawCube(
 				this.transform.position + (Vector3)component.offset,
 				component.bounds.size);

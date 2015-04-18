@@ -14,7 +14,7 @@ public class Man : MonoBehaviour
 
     public Action CurrentAction { get; private set;}
 
-	public Collider2D WeaponCollider;
+	public Collider2D[] WeaponColliders;
 
     private GameController game;
 
@@ -77,11 +77,18 @@ public class Man : MonoBehaviour
 		isKicking = true;
 		yield return new WaitForSeconds(0.1f);
 
-		this.WeaponCollider.enabled = true;
+		foreach (var weaponCollider in WeaponColliders)
+		{
+			weaponCollider.enabled = true;
+		}
 
 		yield return new WaitForSeconds(0.2f);
 
-		this.WeaponCollider.enabled = false;
+		foreach (var weaponCollider in WeaponColliders)
+		{
+			weaponCollider.enabled = false;
+		}
+
 
 		isKicking = false;
 	}
@@ -96,5 +103,13 @@ public class Man : MonoBehaviour
 	private void ResetKickState()
 	{
 		isKicking = false;
+	}
+
+	public void KickToHead()
+	{
+		Debug.Log("Kicked to head");
+		var o = (GameObject)Instantiate(this.BloodPrefab, this.transform.position, Quaternion.identity);
+		Destroy(o, 2);
+		LeanTween.delayedCall(this.gameObject, 0.1f, () => this.gameObject.SetActive(false));
 	}
 }
