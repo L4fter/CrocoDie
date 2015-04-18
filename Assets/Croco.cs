@@ -134,7 +134,14 @@ public class Croco : MonoBehaviour
 
 		if (delta > 0)
 		{
-			Body.AddPart();
+			if (Random.Range(0, 2) > 0)
+			{
+				Body.AddPart();
+			}
+			else
+			{
+				Body.RemovePart();
+			}
 		}
 	}
 }

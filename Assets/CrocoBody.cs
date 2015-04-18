@@ -37,23 +37,28 @@ public class CrocoBody : MonoBehaviour
 	public void AddPart()
 	{
 		var lastBodyPart = this.BodyParts[this.BodyParts.Count - 1];
-		var newPart = Instantiate(this.bodyObject) as GameObject;
+		var newPart = Instantiate(this.bodyObject);
 		newPart.transform.parent = this.transform;
 		newPart.transform.localPosition = lastBodyPart.transform.localPosition;
-		BodyParts.Add(newPart);
+		this.BodyParts.Add(newPart);
 
+		LeanTween.cancel(newPart);
 		LeanTween.moveLocal(newPart, newPart.transform.localPosition + this.OnePartOffset, 0.2f);
-		LeanTween.moveLocal(this.TailObject, this.tailPosition + this.OnePartOffset, 0.2f);
-		this.tailPosition += this.OnePartOffset;
+		LeanTween.cancel(this.TailObject);
+		LeanTween.moveLocal(this.TailObject, newPart.transform.localPosition + this.OnePartOffset*2, 0.2f);
 	}
 
 	public void RemovePart()
 	{
-		if (this.BodyParts.Count == 1)
+		if (this.BodyParts.Count < 2)
 		{
 			return;
 		}
 
-
+		var lastBodyPart = this.BodyParts[this.BodyParts.Count - 1];
+		LeanTween.cancel(this.TailObject);
+		LeanTween.moveLocal(this.TailObject, lastBodyPart.transform.localPosition, 0.1f);
+		this.BodyParts.RemoveAt(this.BodyParts.Count - 1);
+		Destroy(lastBodyPart, 0.15f);
 	}
 }
