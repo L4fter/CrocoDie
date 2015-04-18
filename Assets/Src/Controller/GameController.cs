@@ -44,17 +44,17 @@ public class GameController : MonoBehaviour
     [RPC]
     public void LoadServerGame()
     {
-        Debug.Log("Loading server game...");
         controlMan = false;
-        NetworkView.RPC("LoadClientGame", RPCMode.All, !controlMan);
+        Debug.Log("Loading server game... " + controlMan);
+        NetworkView.RPC("LoadClientGame", RPCMode.Others, !controlMan);
         StartLevel("TestLevel");
     }
 
     [RPC]
     public void LoadClientGame(bool controlMan)
     {
-        Debug.Log("Loading client game...");
         this.controlMan = controlMan;
+        Debug.Log("Loading client game... " + controlMan);
         StartLevel("TestLevel");
     }
 
@@ -86,8 +86,9 @@ public class GameController : MonoBehaviour
         var count = 0;
         while (error && count < 6)
         {
+            Debug.Log("Connect...");
             yield return new WaitForSeconds(1);
-            NetworkView.RPC("LoadServerGame", RPCMode.All);
+            NetworkView.RPC("LoadServerGame", RPCMode.Others);
             error = false;
         }
         
