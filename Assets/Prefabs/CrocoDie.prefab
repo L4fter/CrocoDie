@@ -547,7 +547,7 @@ MonoBehaviour:
   Health: 0
   WeaponColliders:
   - {fileID: 6160562}
-  - {fileID: 0}
+  - {fileID: 5840746}
   BloodPrefab: {fileID: 172780, guid: 786d47123eaa43f459fd71951fb56288, type: 2}
 --- !u!114 &11485380
 MonoBehaviour:

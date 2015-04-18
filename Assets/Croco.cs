@@ -47,7 +47,7 @@ public class Croco : MonoBehaviour
 	{
 		currentMap = FindObjectOfType<Map>();
 	    game = GameController.Instance;
-	    if (game.PlayerControlsMan)
+	    if (!game.PlayerControlsCroco)
 	    {
 	        Destroy(this.GetComponent<CrocoController>());
 	    }
@@ -56,7 +56,7 @@ public class Croco : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-	    if (game.PlayerControlsMan)
+	    if (!game.PlayerControlsCroco)
 	    {
 	        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
 	    }

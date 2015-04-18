@@ -5,15 +5,18 @@ public class Coconut : MonoBehaviour
 	public bool IsReflected;
 	public Vector3 Speed;
 
+	public float RotateSpeed;
+
 	public void Launch(Vector3 speed)
 	{
 		this.Speed = speed;
+		this.RotateSpeed = speed.magnitude * Random.Range(0.25f, 1f);
 	}
 
 	public void Update()
 	{
 		this.transform.position += this.Speed * Time.deltaTime;
-        this.transform.Rotate(0, 0, Speed.magnitude / 2); 
+        this.transform.Rotate(0, 0, RotateSpeed); 
 	}
 
 	public void OnTriggerEnter2D(Collider2D collider)

@@ -10,12 +10,20 @@ public class GameController : MonoBehaviour
     public NetworkView NetworkView;
 
     private bool controlMan;
+	private bool controlCroco;
 
     public bool PlayerControlsMan
     {
         get
         {
             return controlMan;
+        }
+    }
+    public bool PlayerControlsCroco
+    {
+        get
+        {
+            return controlCroco;
         }
     }
 
@@ -37,7 +45,8 @@ public class GameController : MonoBehaviour
 
     public void LoadSingleGame()
     {
-        controlMan = false;
+        controlMan = true;
+        controlCroco = true;
         Application.LoadLevel("TestLevel");
     }
 
