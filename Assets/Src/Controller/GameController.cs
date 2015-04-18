@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+
+using UnityEngine;
 using System.Collections;
 
 public class GameController : MonoBehaviour
@@ -48,10 +50,34 @@ public class GameController : MonoBehaviour
 
     public void Connect()
     {
+        StartCoroutine(this.ConnectRoutine());
+    }
+
+    private IEnumerator ConnectRoutine()
+    {
         var er = Network.Connect("127.0.0.1", 25000);
-        if (er == NetworkConnectionError.NoError)
+        var error = true;
+        var count = 0;
+        while (error && count < 5)
         {
-            NetworkView.RPC("LoadServerGame", RPCMode.All);
+            try
+            {
+                NetworkView.RPC("LoadServerGame", RPCMode.All);
+                error = false;
+            }
+            catch (Exception e)
+            {
+                error = true;
+            }
+
+            if (error)
+            {
+                count++;
+                yield return new WaitForSeconds(1);
+            }
+            error = false;
+
         }
+        
     }
 }
