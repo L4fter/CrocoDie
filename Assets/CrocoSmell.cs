@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class CrocoSmell : MonoBehaviour {
-
+public class CrocoSmell : MonoBehaviour
+{
 	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	private void Start()
+	{
 	}
 
-	void OnTriggerEnter2D(Collider2D collider2D)
+	// Update is called once per frame
+	private void Update()
+	{
+	}
+
+	private void OnTriggerEnter2D(Collider2D collider2D)
 	{
 		if (collider2D.gameObject.tag == "Food")
 		{
-			
+			var crocoAnimator = this.transform.parent.GetComponentInChildren<CrocoAnimator>();
+			crocoAnimator.OpenCrocoMouth();
 		}
 	}
 }

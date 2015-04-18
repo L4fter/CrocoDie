@@ -136,5 +136,8 @@ public class Croco : MonoBehaviour
 		{
 			this.Body.AddPart();
 		}
+
+		var crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();
+		crocoAnimator.CloseCrocoMouth();
 	}
 }

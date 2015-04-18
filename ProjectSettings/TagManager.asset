@@ -8,6 +8,7 @@ TagManager:
   - Weapon
   - Shield
   - Head
+  - Food
   layers:
   - Default
   - TransparentFX

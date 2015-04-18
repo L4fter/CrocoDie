@@ -28,6 +28,7 @@ public class CrocoAnimator : MonoBehaviour
     public void OpenCrocoMouth()
     {
         anim.SetBool("Open", true);
+		Debug.Log("OK");
     }
 
     public void CloseCrocoMouth()
