@@ -17,7 +17,12 @@
             else if (Input.GetKeyDown(KeyCode.W))
             {
                 Debug.Log("W!");
-                anim.SetBool("Move", false);
+                anim.SetTrigger("MidKick");
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("E!");
+                anim.SetTrigger("HighKick");
             }
         }
 
@@ -31,9 +36,10 @@
             anim.SetTrigger("MidKick");
         }
 
-        public void CloseCrocoMouth()
+        public void HighKick()
         {
-            anim.SetBool("Open", false);
-        } 
+            anim.SetTrigger("HighKick");
+        }
+
     }
 }
