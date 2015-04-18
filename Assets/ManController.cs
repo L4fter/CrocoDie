@@ -18,11 +18,13 @@ public class ManController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			this.SendMessage("LowKick");
-		}
-
-		if (Input.GetKeyDown(KeyCode.Return))
+		} else if (Input.GetKeyDown(KeyCode.Return))
 		{
-			this.SendMessage("HighKick");
+		    this.SendMessage("HighKick");
+		}
+		else
+		{
+		    this.SendMessage("Idle");
 		}
 	}
 }

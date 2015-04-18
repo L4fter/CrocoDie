@@ -12,11 +12,22 @@ public class Man : MonoBehaviour
 
 	private bool isKicking;
 
+    public Action CurrentAction { get; private set;}
+
 	public Collider2D WeaponCollider;
 
+    private GameController game;
+
+    public enum Action { LowKick, MidKick, HighKick, Idle }
+
+    
 	// Use this for initialization
 	void Start () {
-	
+        game = GameController.Instance;
+        if (!game.PlayerControlsMan)
+        {
+            Destroy(this.GetComponent<ManController>());
+        }
 	}
 	
 	// Update is called once per frame
@@ -26,16 +37,18 @@ public class Man : MonoBehaviour
 
 	public void LowKick()
 	{
+        Debug.Log("Low kick!");
 		if (isKicking)
 		{
 			return;
 		}
-
+        this.CurrentAction = Action.LowKick;
 		this.Row();
 	}
 
 	public void MidKick()
 	{
+        Debug.Log("Mid kick!");
 		if (isKicking)
 		{
 			return;
@@ -44,13 +57,19 @@ public class Man : MonoBehaviour
 
 	public void HighKick()
 	{
+        Debug.Log("High kick!");
 		if (isKicking)
 		{
 			return;
 		}
-
+        this.CurrentAction = Action.HighKick;
 		this.StartCoroutine(this.HighKickCoroutine());
 	}
+
+    public void Idle()
+    {
+        this.CurrentAction = Action.Idle;
+    }
 
 	private IEnumerator HighKickCoroutine()
 	{
