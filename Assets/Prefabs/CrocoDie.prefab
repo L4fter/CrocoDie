@@ -130,13 +130,13 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189404}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.125509292, y: -.0221476555}
+  m_Offset: {x: -.0788687766, y: -.0781164169}
   serializedVersion: 2
-  m_Size: {x: .246944666, y: .453667641}
+  m_Size: {x: .340225756, y: .602916718}
 --- !u!61 &6176054
 BoxCollider2D:
   m_ObjectHideFlags: 1
