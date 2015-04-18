@@ -149,6 +149,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429274}
+  - 114: {fileID: 11496018}
   m_Layer: 0
   m_Name: CrocoBody
   m_TagString: Untagged
@@ -549,6 +550,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Croco: {fileID: 11496722}
+--- !u!114 &11496018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a303d8ad218eb46a40b675d21fe696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadObject: {fileID: 118414}
+  TailObject: {fileID: 148540}
+  BodyObjects:
+  - {fileID: 114704}
+  OnePartOffset: {x: -.144400001, y: 0, z: 0}
+  Head: {fileID: 21300000, guid: 5ca225513d634a2419500f2f91d12e02, type: 3}
+  BodyPart: {fileID: 21300000, guid: 54b454e25ea922542bdca27d89d99878, type: 3}
+  Tail: {fileID: 21300000, guid: 083c6d8ad7f895540b71dceb715e2670, type: 3}
 --- !u!114 &11496722
 MonoBehaviour:
   m_ObjectHideFlags: 1
