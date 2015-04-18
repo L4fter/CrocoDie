@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 461042}
   - 114: {fileID: 11415954}
+  - 114: {fileID: 11403158}
   m_Layer: 0
   m_Name: CocoGun
   m_TagString: Untagged
@@ -23,11 +24,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.3299999, y: -3.66000009, z: 0}
+  m_LocalPosition: {x: 14.7799997, y: -3.66000009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11403158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6903041d7a0fd947930e0fa94f884a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11415954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AimDirection: {x: -1, y: 1, z: 0}
   RandomX: .300000012
-  ProjectileSpeed: 2
+  ProjectileSpeed: 5
   CoconutPrefab: {fileID: 162930, guid: b1ee98058bf7c6743aeaeb552a7fcf40, type: 2}
 --- !u!1001 &100100000
 Prefab:
