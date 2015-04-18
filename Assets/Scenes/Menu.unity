@@ -373,6 +373,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1376564158}
   - 114: {fileID: 1376564157}
+  - 148: {fileID: 1376564159}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -391,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80463953b19dbdb48b6bd9869205c822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkView: {fileID: 1376564159}
 --- !u!4 &1376564158
 Transform:
   m_ObjectHideFlags: 0
@@ -403,6 +405,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!148 &1376564159
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1376564156}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1376564158}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
 --- !u!1 &1385326513
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +768,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376564157}
-        m_MethodName: LoadGame
+        m_MethodName: Host
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1050,7 +1064,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1900317453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1376564157}
+        m_MethodName: Connect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1900317453
