@@ -36,6 +36,8 @@ public class Croco : MonoBehaviour
 
     public Vector3 Goal; //used when player control man
 
+	public CrocoBody Body;
+
 	private float currentDampVelocity;
 
     private GameController game;
@@ -128,6 +130,11 @@ public class Croco : MonoBehaviour
 		if (this.IsMineCroco)
 		{
 			GameUI.CrocoWeight = this.Weight;
+		}
+
+		if (delta > 0)
+		{
+			Body.AddPart();
 		}
 	}
 }

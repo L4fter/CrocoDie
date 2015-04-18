@@ -8,7 +8,7 @@ public class CrocoBody : MonoBehaviour
 
 	public GameObject TailObject;
 
-	public List<GameObject> BodyObjects;
+	public List<GameObject> BodyParts;
 
 	public Vector3 OnePartOffset;
 
@@ -20,10 +20,13 @@ public class CrocoBody : MonoBehaviour
 
 	private GameObject bodyObject;
 
+	private Vector3 tailPosition;
+
 	// Use this for initialization
 	void Start ()
 	{
-		bodyObject = BodyObjects[0];
+		bodyObject = this.BodyParts[0];
+		tailPosition = TailObject.transform.localPosition;
 	}
 	
 	// Update is called once per frame
@@ -33,13 +36,20 @@ public class CrocoBody : MonoBehaviour
 
 	public void AddPart()
 	{
-		var lastBodyObject = BodyObjects[BodyObjects.Count - 1];
-//		Instantiate(bodyObject, BodyObjects)
+		var lastBodyPart = this.BodyParts[this.BodyParts.Count - 1];
+		var newPart = Instantiate(this.bodyObject) as GameObject;
+		newPart.transform.parent = this.transform;
+		newPart.transform.localPosition = lastBodyPart.transform.localPosition;
+		BodyParts.Add(newPart);
+
+		LeanTween.moveLocal(newPart, newPart.transform.localPosition + this.OnePartOffset, 0.2f);
+		LeanTween.moveLocal(this.TailObject, this.tailPosition + this.OnePartOffset, 0.2f);
+		this.tailPosition += this.OnePartOffset;
 	}
 
 	public void RemovePart()
 	{
-		if (this.BodyObjects.Count == 1)
+		if (this.BodyParts.Count == 1)
 		{
 			return;
 		}
