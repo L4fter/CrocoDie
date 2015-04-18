@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     {
         get
         {
+            Debug.Log("control man: " + controlMan);
             return controlMan;
         }
     }
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour
     {
         this.controlMan = controlMan;
         Debug.Log("Loading client game... " + controlMan);
+        Debug.Log("Loading client game... " + PlayerControlsMan);
         StartLevel("TestLevel");
     }
 
