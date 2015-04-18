@@ -34,8 +34,10 @@ public class Birdy : MonoBehaviour
 		}
 
 		Mover.Speed = Random.Range(5/DropDeadTime, 10/DropDeadTime);
+		this.GetComponentInChildren<Animator>().enabled = false;
 		FlyToFallSwitch.Switch();
 		LeanTween.delayedCall(gameObject, DropDeadTime, TurnOffMover);
+		this.transform.GetChild(0).tag = "Food";
 		IsAlive = false;
 	}
 
