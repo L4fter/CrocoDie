@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SimpleDestroyer : MonoBehaviour {
+public class ParentDestroyer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,6 @@ public class SimpleDestroyer : MonoBehaviour {
 
 	public void Destroy()
 	{
-		this.gameObject.SetActive(false);
+		Destroy(this.transform.parent.gameObject);
 	}
 }
