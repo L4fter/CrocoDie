@@ -18,12 +18,13 @@ public class Man : MonoBehaviour
 
     private GameController game;
 
-    public enum Action { LowKick, MidKick, HighKick, Idle }
+    public enum Action { LowKick = 1, MidKick = 2, HighKick = 3, Idle = 4}
 
     
 	// Use this for initialization
 	void Start () {
         game = GameController.Instance;
+        CurrentAction = Action.Idle;
         if (!game.PlayerControlsMan)
         {
             Destroy(this.GetComponent<ManController>());

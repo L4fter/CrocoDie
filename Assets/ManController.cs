@@ -22,9 +22,5 @@ public class ManController : MonoBehaviour
 		{
 		    this.SendMessage("HighKick");
 		}
-		else
-		{
-		    this.SendMessage("Idle");
-		}
 	}
 }
