@@ -35,7 +35,6 @@ public class CocoGun : MonoBehaviour
     [RPC]
 	public void Shoot(Vector3 dir)
 	{
-        Debug.Log("Shoot!");
 		var coconut = Instantiate(this.CoconutPrefab, this.transform.position, Quaternion.identity) as GameObject;
 		projectile = coconut.GetComponent<Coconut>();
 		projectile.Launch(dir);
