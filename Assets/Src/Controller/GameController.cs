@@ -56,6 +56,10 @@ public class GameController : MonoBehaviour
     private IEnumerator ConnectRoutine()
     {
         var er = Network.Connect("127.0.0.1", 25000);
+        if (er != NetworkConnectionError.NoError)
+        {
+            yield break;  
+        }
         var error = true;
         var count = 0;
         while (error && count < 5)
@@ -65,7 +69,7 @@ public class GameController : MonoBehaviour
                 NetworkView.RPC("LoadServerGame", RPCMode.All);
                 error = false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 error = true;
             }
