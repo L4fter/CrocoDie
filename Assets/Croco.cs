@@ -2,7 +2,7 @@
 
 public class Croco : MonoBehaviour
 {
-	public bool IsMineCroco = true;
+    public bool IsMineCroco = true;
 
 	public Map currentMap;
 
@@ -34,25 +34,34 @@ public class Croco : MonoBehaviour
 
 	public float MaxSleepiness = 10;
 
+    public Vector3 Goal; //used when player control man
+
 	private float currentDampVelocity;
 
-    public Vector3 Goal; //used when player control man
+    private GameController game;
 
 	// Use this for initialization
 	private void Start()
 	{
 		currentMap = FindObjectOfType<Map>();
+	    game = GameController.Instance;
+	    if (game.PlayerControlsMan)
+	    {
+	        Destroy(this.GetComponent<CrocoController>());
+	    }
 	}
 
 	// Update is called once per frame
 	private void Update()
 	{
-	    if (GameController.Instance.PlayerControlsMan)
+	    if (game.PlayerControlsMan)
 	    {
+            Debug.Log("Man control");
 	        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
 	    }
 	    else
 	    {
+            Debug.Log("Croco control");
             this.ForwardUpdate();
             this.VerticalUpdate();
 	    }

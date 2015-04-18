@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Loading server game...");
         controlMan = false;
         NetworkView.RPC("LoadClientGame", RPCMode.All, !controlMan);
-        Application.LoadLevel("TestLevel");
+        StartLevel("TestLevel");
     }
 
     [RPC]
@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Loading client game...");
         this.controlMan = controlMan;
-        Application.LoadLevel("TestLevel");
+        StartLevel("TestLevel");
     }
 
     public void Host()
@@ -63,6 +63,11 @@ public class GameController : MonoBehaviour
         var useNat = !Network.HavePublicAddress();
         var er = Network.InitializeServer(32, 25000, useNat);
         Debug.Log("Hosting error: " + er);
+    }
+
+    private void StartLevel(string levelName)
+    {
+        Application.LoadLevel(levelName);
     }
 
     public void Connect()
