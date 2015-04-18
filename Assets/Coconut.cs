@@ -13,6 +13,7 @@ public class Coconut : MonoBehaviour
 	public void Update()
 	{
 		this.transform.position += this.Speed * Time.deltaTime;
+        this.transform.Rotate(0, 0, Speed.magnitude / 2); 
 	}
 
 	public void OnTriggerEnter2D(Collider2D collider)
