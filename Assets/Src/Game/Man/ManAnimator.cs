@@ -26,6 +26,11 @@
             anim.SetTrigger("MakeMove");
         }
 
+        public void MidKick()
+        {
+            anim.SetTrigger("MidKick");
+        }
+
         public void CloseCrocoMouth()
         {
             anim.SetBool("Open", false);

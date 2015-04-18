@@ -22,5 +22,9 @@ public class ManController : MonoBehaviour
 		{
 		    this.SendMessage("HighKick");
 		}
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            this.SendMessage("MidKick");
+        }
 	}
 }

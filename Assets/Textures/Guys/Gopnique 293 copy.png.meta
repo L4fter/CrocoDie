@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 081043c009eec3345858a8aecb07bb17
-timeCreated: 1429384303
+timeCreated: 1429386740
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -61,7 +61,7 @@ TextureImporter:
         width: 293
         height: 442
       alignment: 9
-      pivot: {x: .730000019, y: .379999995}
+      pivot: {x: .790000021, y: .264999986}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Gopnique 293 copy_1
       rect:
@@ -71,7 +71,7 @@ TextureImporter:
         width: 293
         height: 442
       alignment: 9
-      pivot: {x: .730000019, y: .379999995}
+      pivot: {x: .790000021, y: .264999986}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Gopnique 293 copy_2
       rect:
@@ -81,7 +81,7 @@ TextureImporter:
         width: 293
         height: 442
       alignment: 9
-      pivot: {x: .730000019, y: .379999995}
+      pivot: {x: .790000021, y: .264999986}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Gopnique 293 copy_3
       rect:
@@ -91,7 +91,7 @@ TextureImporter:
         width: 293
         height: 442
       alignment: 9
-      pivot: {x: .730000019, y: .379999995}
+      pivot: {x: .790000021, y: .264999986}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
