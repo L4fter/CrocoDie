@@ -20,12 +20,14 @@ public class GameController : MonoBehaviour
 	
 	}
 
+
     public void LoadSingleGame()
     {
         controlMan = false;
         Application.LoadLevel("TestLevel");
     }
 
+    [RPC]
     public void LoadServerGame()
     {
         Debug.Log("Loading server game...");
@@ -34,6 +36,7 @@ public class GameController : MonoBehaviour
         Application.LoadLevel("TestLevel");
     }
 
+    [RPC]
     public void LoadClientGame(bool controlMan)
     {
         Debug.Log("Loading client game...");
@@ -64,23 +67,10 @@ public class GameController : MonoBehaviour
         var count = 0;
         while (error && count < 5)
         {
-            try
-            {
-                NetworkView.RPC("LoadServerGame", RPCMode.All);
-                error = false;
-            }
-            catch (Exception)
-            {
-                error = true;
-            }
-
-            if (error)
-            {
-                count++;
-                yield return new WaitForSeconds(1);
-            }
+            yield return new WaitForSeconds(3);
+            NetworkView.RPC("LoadServerGame", RPCMode.All);
+            Debug.Log("error is false");
             error = false;
-
         }
         
     }
