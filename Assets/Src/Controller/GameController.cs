@@ -15,7 +15,6 @@ public class GameController : MonoBehaviour
     {
         get
         {
-            Debug.Log("control man: " + controlMan);
             return controlMan;
         }
     }
