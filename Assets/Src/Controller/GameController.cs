@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator ConnectRoutine()
     {
-        var er = Network.Connect("127.0.0.1", 25000);
+        var er = Network.Connect("192.168.42.75", 25000);
         if (er != NetworkConnectionError.NoError)
         {
             yield break;  

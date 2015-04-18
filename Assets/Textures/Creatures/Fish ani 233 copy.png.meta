@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0130e48512d0af540a50f46ad2ea6335
-timeCreated: 1429382340
+timeCreated: 1429389778
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -59,8 +59,8 @@ TextureImporter:
         y: 0
         width: 233
         height: 166
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Fish ani 233 copy_1
       rect:
@@ -69,8 +69,8 @@ TextureImporter:
         y: 0
         width: 233
         height: 166
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Fish ani 233 copy_2
       rect:
@@ -79,8 +79,8 @@ TextureImporter:
         y: 0
         width: 233
         height: 166
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
