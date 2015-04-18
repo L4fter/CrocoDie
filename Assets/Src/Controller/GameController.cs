@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
     public void LoadServerGame()
     {
         controlMan = false;
+        controlCroco = true;
         Debug.Log("Loading server game... " + controlMan);
         NetworkView.RPC("LoadClientGame", RPCMode.Others, !controlMan);
         StartLevel("TestLevel");
