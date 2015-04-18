@@ -34,6 +34,7 @@ GameObject:
   - 61: {fileID: 6103130}
   - 114: {fileID: 11408940}
   - 114: {fileID: 11411162}
+  - 114: {fileID: 11475234}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -158,6 +159,17 @@ MonoBehaviour:
   Feeders:
   - {fileID: 11408940}
   - {fileID: 11411162}
+--- !u!114 &11475234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29656c5b7c2326f4a9fad89da328ac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11478714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910372259a20b5344a22db2c070e9fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amplitude: .100000001
+  Amplitude: .300000012
   Period: 2
 --- !u!114 &11484806
 MonoBehaviour:

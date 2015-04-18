@@ -19,5 +19,10 @@ public class ManController : MonoBehaviour
 		{
 			this.SendMessage("LowKick");
 		}
+
+		if (Input.GetKeyDown(KeyCode.Return))
+		{
+			this.SendMessage("HighKick");
+		}
 	}
 }
