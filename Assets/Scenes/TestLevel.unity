@@ -1484,7 +1484,7 @@ NetworkView:
   m_GameObject: {fileID: 2074930790}
   m_Enabled: 1
   m_StateSynchronization: 1
-  m_Observed: {fileID: 2074930793}
+  m_Observed: {fileID: 2074930796}
   m_ViewID:
     m_ID: 3
     m_Type: 1
@@ -1500,3 +1500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   man: {fileID: 2074930791}
+  NetworkView: {fileID: 2074930792}
+--- !u!4 &2074930796
+Transform:
+  m_PrefabParentObject: {fileID: 471372, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
+  m_PrefabInternal: {fileID: 2074930787}

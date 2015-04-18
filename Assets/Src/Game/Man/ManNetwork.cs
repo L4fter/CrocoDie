@@ -10,7 +10,7 @@
 
         private GameController game;
 
-        private void start()
+        void Start()
         {
             game = GameController.Instance;
         }

@@ -25,10 +25,10 @@ public class Man : MonoBehaviour
 	void Start () {
         game = GameController.Instance;
         CurrentAction = Action.Idle;
-        if (!game.PlayerControlsMan)
-        {
-            Destroy(this.GetComponent<ManController>());
-        }
+//        if (!game.PlayerControlsMan)
+//        {
+//            Destroy(this.GetComponent<ManController>());
+//        }
 	}
 	
 	// Update is called once per frame
