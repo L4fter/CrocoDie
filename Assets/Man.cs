@@ -29,7 +29,7 @@ public class Man : MonoBehaviour
         CurrentAction = Action.Idle;
         if (!game.PlayerControlsMan)
         {
-//            Destroy(this.GetComponent<ManController>());
+            Destroy(this.GetComponent<ManController>());
         }
 	}
 	
