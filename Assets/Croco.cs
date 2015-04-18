@@ -36,6 +36,8 @@ public class Croco : MonoBehaviour
 
 	private float currentDampVelocity;
 
+    public Vector3 Goal; //used when player control man
+
 	// Use this for initialization
 	private void Start()
 	{
@@ -45,9 +47,15 @@ public class Croco : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		this.ForwardUpdate();
-
-		this.VerticalUpdate();
+	    if (GameController.Instance.PlayerControlsMan)
+	    {
+	        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
+	    }
+	    else
+	    {
+            this.ForwardUpdate();
+            this.VerticalUpdate();
+	    }
 	}
 
 	private float targetVerticalPos;

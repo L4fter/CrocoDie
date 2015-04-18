@@ -681,6 +681,42 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 136274, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
   m_PrefabInternal: {fileID: 2074930787}
+--- !u!148 &805050303
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805050302}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 805050304}
+  m_ViewID:
+    m_ID: 2
+    m_Type: 1
+--- !u!114 &805050304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805050302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f906075d7e7f1e94994228acecd5654c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Croco: {fileID: 2074930789}
+--- !u!148 &805050305
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805050302}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 2074930788}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
 --- !u!1 &855918841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,3 +1456,13 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2074930788
+Transform:
+  m_PrefabParentObject: {fileID: 455266, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
+  m_PrefabInternal: {fileID: 2074930787}
+--- !u!114 &2074930789
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11496722, guid: fd926e02b1f1a044fb21af4fa1116f80,
+    type: 2}
+  m_PrefabInternal: {fileID: 2074930787}
+  m_Script: {fileID: 11500000, guid: df8e2c61358161e42ac2b1a97b9b1b10, type: 3}

@@ -5,10 +5,24 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController Instance;
 
     public NetworkView NetworkView;
 
     private bool controlMan;
+
+    public bool PlayerControlsMan
+    {
+        get
+        {
+            return controlMan;
+        }
+    }
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -65,11 +79,10 @@ public class GameController : MonoBehaviour
         }
         var error = true;
         var count = 0;
-        while (error && count < 5)
+        while (error && count < 6)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
             NetworkView.RPC("LoadServerGame", RPCMode.All);
-            Debug.Log("error is false");
             error = false;
         }
         
