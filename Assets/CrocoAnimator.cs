@@ -23,6 +23,16 @@ public class CrocoAnimator : MonoBehaviour
             Debug.Log("M!");
             anim.SetBool("Open", false);
         }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("L!");
+            anim.SetBool("Sleep", true);
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("K!");
+            anim.SetBool("Sleep", false);
+        }
 	}
 
     public void OpenCrocoMouth()
