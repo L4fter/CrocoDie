@@ -22,7 +22,6 @@ public class Croco : MonoBehaviour
 		{
 			float t = (Weight - MinWeight) / (MaxWeight - MinWeight);
 			var vertSpeed = Mathf.Lerp(this.MinVertSpeed, this.MaxVertSpeed, 1 - t);
-			Debug.Log(vertSpeed);
 			return vertSpeed;
 		}
 	}

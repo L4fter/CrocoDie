@@ -16,13 +16,17 @@ public class OwnSpeedChanger : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collider2D)
 	{
+		if (!this.enabled)
+		{
+			return;
+		}
+		
 		var croco = collider2D.gameObject.GetComponent<Croco>();
 
 		if (croco != null)
 		{
 			croco.ApplyOwnSpeedChange(this.Delta);
+			this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
 		}
-
-		this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
 	}
 }
