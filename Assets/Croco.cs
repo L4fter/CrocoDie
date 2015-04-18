@@ -56,12 +56,10 @@ public class Croco : MonoBehaviour
 	{
 	    if (game.PlayerControlsMan)
 	    {
-            Debug.Log("Man control");
 	        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
 	    }
 	    else
 	    {
-            Debug.Log("Croco control");
             this.ForwardUpdate();
             this.VerticalUpdate();
 	    }
