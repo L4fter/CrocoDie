@@ -18,7 +18,9 @@ public class Man : MonoBehaviour
 
     private GameController game;
 
-    public enum Action { LowKick = 1, MidKick = 2, HighKick = 3, Idle = 4}
+	public GameObject BloodPrefab;
+
+	public enum Action { LowKick = 1, MidKick = 2, HighKick = 3, Idle = 4}
 
     
 	// Use this for initialization
@@ -43,6 +45,7 @@ public class Man : MonoBehaviour
 		{
 			return;
 		}
+
         this.CurrentAction = Action.LowKick;
 		this.Row();
 	}
