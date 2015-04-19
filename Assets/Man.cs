@@ -110,6 +110,7 @@ public class Man : MonoBehaviour
 
 	public void KickToHead()
 	{
+		return;
 		Debug.Log("Kicked to head");
 		var o = (GameObject)Instantiate(this.BloodPrefab, this.transform.position, Quaternion.identity);
 	    MyCroco.OwnSpeed = 0;

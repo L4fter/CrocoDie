@@ -12,6 +12,7 @@ public class Croco : MonoBehaviour
 
 	public float OwnSpeed;
 	public float Speed;
+	public float WakingSpeed;
 
 	public float MinVertSpeed;
 	public float MaxVertSpeed;
@@ -29,18 +30,18 @@ public class Croco : MonoBehaviour
 	public float MinWeight;
 	public float MaxWeight;
 	public float Weight;
-
-	public float Sleepiness = 0;
-
-	public float MaxSleepiness = 10;
-
+	public float WeightLossPerSecond;
+	private int roundedWeight;
+	
     public Vector3 Goal; //used when player control man
 
 	public CrocoBody Body;
 
 	private float currentDampVelocity;
 
-    private GameController game;
+	private GameController game;
+
+	private bool IsSleepeng;
 
 	// Use this for initialization
 	private void Start()
@@ -51,6 +52,7 @@ public class Croco : MonoBehaviour
 	    {
 	        Destroy(this.GetComponent<CrocoController>());
 	    }
+		this.roundedWeight = Mathf.CeilToInt(this.Weight);
 	}
 
 	// Update is called once per frame
@@ -65,31 +67,50 @@ public class Croco : MonoBehaviour
             this.ForwardUpdate();
             this.VerticalUpdate();
 	    }
+
+		this.LoseSomeWeight();
 	}
 
+	private void LoseSomeWeight()
+	{
+		if (IsSleepeng)
+		{
+			return;
+		}
+
+		Weight -= WeightLossPerSecond * Time.deltaTime;
+		if (this.Weight < roundedWeight)
+		{
+			this.Body.RemovePart();
+			roundedWeight = Mathf.CeilToInt(this.Weight);
+			Debug.Log(string.Format("Rounded weight = {0}", roundedWeight));
+
+			if (Weight <= 0)
+			{
+				this.Sleep();
+			}
+		}
+	}
+
+	private void Sleep()
+	{
+		this.IsSleepeng = true;
+		this.OwnSpeed = 0;
+		Debug.Log("Sleep");
+	}
+	private void WakeUp()
+	{
+		this.IsSleepeng = false;
+		this.OwnSpeed = this.Speed;
+		Debug.Log("Wake");
+	}
+
+
 	private float targetVerticalPos;
+	
 	private void VerticalUpdate()
 	{
 		
-//		this.transform.position += new Vector3(0, this.VertSpeed * Time.deltaTime * (int)this.CrocoState);
-
-//		var position = this.transform.position;
-//		if (this.CrocoState == CrocoState.MovingUp)
-//		{
-//			if (position.y >= this.targetVerticalPos)
-//			{
-//				this.transform.position = new Vector3(position.x, this.targetVerticalPos);
-//				this.CrocoState = CrocoState.OnTheLine;
-//			}
-//		}
-//		else
-//		{
-//			if (position.y <= this.targetVerticalPos)
-//			{
-//				this.transform.position = new Vector3(position.x, this.targetVerticalPos);
-//				this.CrocoState = CrocoState.OnTheLine;
-//			}
-//		}
 	}
 
 	private void ForwardUpdate()
@@ -117,6 +138,12 @@ public class Croco : MonoBehaviour
 	public void ApplySpeedChange(float delta)
 	{
 		this.Speed += delta;
+
+		if (this.Speed > this.WakingSpeed
+			&& IsSleepeng)
+		{
+			this.WakeUp();
+		}
 	}
 
 	public void ApplyOwnSpeedChange(float delta)
@@ -127,14 +154,15 @@ public class Croco : MonoBehaviour
 	public void ApplyWeightChange(float delta)
 	{
 		this.Weight = Mathf.Clamp(this.Weight + delta, this.MinWeight, this.MaxWeight);
-		if (this.IsMineCroco)
-		{
-			GameUI.CrocoWeight = this.Weight;
-		}
+		this.roundedWeight = Mathf.CeilToInt(Weight);
 
 		if (delta > 0)
 		{
 			this.Body.AddPart();
+		}
+		else
+		{
+			this.Body.RemovePart();
 		}
 
 		var crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();

@@ -1829,7 +1829,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455266, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 14884366, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
       propertyPath: m_ViewID.m_ID
@@ -1851,6 +1851,14 @@ Prefab:
       propertyPath: currentMap
       value: 
       objectReference: {fileID: 240006341}
+    - target: {fileID: 11471982, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
+      propertyPath: RowDeltaSpeed
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496722, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
+      propertyPath: WeightLossPerSecond
+      value: .0500000007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
   m_IsPrefabParent: 0
