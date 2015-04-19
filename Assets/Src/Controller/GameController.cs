@@ -64,7 +64,7 @@ public class GameController : MonoBehaviour
         controlCroco = true;
         Debug.Log("Loading server game... " + controlMan);
         NetworkView.RPC("LoadClientGame", RPCMode.Others, !controlMan);
-        StartLevel("TestLevel");
+        StartLevel("Tutorial");
     }
 
     [RPC]
@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
         this.controlMan = controlMan;
         Debug.Log("Loading client game... " + controlMan);
         Debug.Log("Loading client game... " + PlayerControlsMan);
-        StartLevel("TestLevel");
+        StartLevel("Tutorial");
     }
 
     public void Host()
