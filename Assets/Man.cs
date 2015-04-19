@@ -20,6 +20,8 @@ public class Man : MonoBehaviour
 
 	public GameObject BloodPrefab;
 
+	public GameObject Head;
+
 	public enum Action { LowKick = 1, MidKick = 2, HighKick = 3, Idle = 4}
 
     
@@ -109,9 +111,8 @@ public class Man : MonoBehaviour
 
 	public void KickToHead()
 	{
-		return;
 		Debug.Log("Kicked to head");
-		var o = (GameObject)Instantiate(this.BloodPrefab, this.transform.position, Quaternion.identity);
+		var o = (GameObject)Instantiate(this.BloodPrefab, Head.transform.position, Quaternion.identity);
 	    MyCroco.OwnSpeed = 0;
         GameController.Instance.Loose(3);
 		Destroy(o, 2);
