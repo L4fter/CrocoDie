@@ -109,6 +109,10 @@ public class Croco : MonoBehaviour
 
 	private void Sleep()
 	{
+		if (!IsMineCroco)
+		{
+			return;
+		}
 		this.IsSleepeng = true;
 		this.OwnSpeed = 0;
 		this.crocoAnimator.Sleep();
@@ -180,7 +184,7 @@ public class Croco : MonoBehaviour
 			return;
 		}
 
-		if (this.Speed > 4 && delta < 0)
+		if (this.Speed > 2.5f && delta < 0)
 		{
 			delta = -Speed * 0.8f;
 			this.GetComponentInChildren<Man>().FallOver(Speed * 0.8f);
@@ -234,6 +238,10 @@ public class Croco : MonoBehaviour
 		IsDead = true;
 		OwnSpeed = 0;
 		crocoAnimator.Die();
-		GameController.Instance.Loose(i);
+
+		if (IsMineCroco)
+		{
+			GameController.Instance.Loose(i);
+		}
 	}
 }

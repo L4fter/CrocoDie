@@ -45,8 +45,9 @@ GameObject:
   - 61: {fileID: 6183710}
   - 114: {fileID: 11421358}
   - 114: {fileID: 11413390}
-  - 114: {fileID: 11463234}
   - 95: {fileID: 9530224}
+  - 114: {fileID: 11487740}
+  - 114: {fileID: 11434920}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Food
@@ -400,6 +401,18 @@ MonoBehaviour:
   ScaleSpeed: 0
   ScaleBase: 1
   WonderSpeed: 2
+--- !u!114 &11434920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d6f8515f62319408a804a3f5b7fece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: -.200000003
 --- !u!114 &11441120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,18 +428,6 @@ MonoBehaviour:
   ScaleSpeed: 0
   ScaleBase: 1
   WonderSpeed: 2
---- !u!114 &11463234
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3fe9c3591f64994cb99728cb38ad41d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delta: 1
 --- !u!114 &11464394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -472,6 +473,20 @@ MonoBehaviour:
   ScaleSpeed: 0
   ScaleBase: 1
   WonderSpeed: 2
+--- !u!114 &11487740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910372259a20b5344a22db2c070e9fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amplitude: .0399999991
+  Period: .5
+  Phase: 0
 --- !u!114 &11487830
 MonoBehaviour:
   m_ObjectHideFlags: 1

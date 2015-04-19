@@ -114,7 +114,10 @@ public class Man : MonoBehaviour
 		Debug.Log("Kicked to head");
 		var o = (GameObject)Instantiate(this.BloodPrefab, Head.transform.position, Quaternion.identity);
 	    MyCroco.OwnSpeed = 0;
-        GameController.Instance.Loose(3);
+		if (MyCroco.IsMineCroco)
+		{
+			GameController.Instance.Loose(3);
+		}
 		Destroy(o, 2);
 		LeanTween.delayedCall(this.gameObject, 0.1f, () => this.gameObject.SetActive(false));
 	}
@@ -122,7 +125,11 @@ public class Man : MonoBehaviour
 	public void FallOver(float speed)
 	{
 		LeanTween.moveLocalX(this.gameObject, this.transform.localPosition.x + 20, 10f/speed);
-		LeanTween.rotateZ(this.gameObject, 180, 10f/speed);
-		GameController.Instance.Loose(2);
+		LeanTween.rotateZ(this.gameObject, 180, 10f / speed); 
+		
+		if (MyCroco.IsMineCroco)
+		{
+			GameController.Instance.Loose(2);
+		}
 	}
 }
