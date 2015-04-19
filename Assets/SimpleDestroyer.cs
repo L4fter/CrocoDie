@@ -14,6 +14,10 @@ public class SimpleDestroyer : MonoBehaviour {
 
 	public void Destroy()
 	{
+	    if (!enabled)
+	    {
+	        return;
+	    }
 		this.gameObject.SetActive(false);
 	}
 }

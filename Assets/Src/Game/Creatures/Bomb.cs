@@ -4,6 +4,7 @@
 
     public class Bomb : MonoBehaviour
     {
+
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
             if (!this.enabled)
@@ -15,8 +16,9 @@
 
             if (croco != null)
             {
-				croco.Die(3);
-                this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
+				croco.Explode(3);
+               
+                //this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
             }
 
         }

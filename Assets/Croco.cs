@@ -44,9 +44,15 @@ public class Croco : MonoBehaviour
 
 	public CrocoBody Body;
 
+    public GameObject Bang;
+
 	private float currentDampVelocity;
 
 	private GameController game;
+
+	public GameObject Veslo;
+
+	public GameObject Man;
 
 	private bool IsSleepeng;
 
@@ -244,4 +250,17 @@ public class Croco : MonoBehaviour
 			GameController.Instance.Loose(i);
 		}
 	}
+
+    public void Explode(int i)
+    {
+        Bang.SetActive(true);
+        IsDead = true;
+        OwnSpeed = 0;
+        LeanTween.scale(Bang, new Vector3(1.7f, 1.7f, 1.7f), 1f).setEase(LeanTweenType.easeOutBounce);
+        Instantiate(Veslo, gameObject.transform.position, Quaternion.identity);
+        Destroy(Man, 0.2f);
+        Destroy(Bang, 1.1f);
+        crocoAnimator.Die();
+        GameController.Instance.Loose(i);
+    }
 }

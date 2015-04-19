@@ -16,6 +16,8 @@ public class CocoGun : MonoBehaviour
 
     public NetworkView networkView;
 
+    public int chance = 98;
+
 
 	// Use this for initialization
 	void Start ()
@@ -26,7 +28,7 @@ public class CocoGun : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		
-		if (game.PlayerControlsMan && Random.Range(0, 100) > 98)
+		if (game.PlayerControlsMan && Random.Range(0, 100) > chance)
 		{
 			this.Shoot((this.AimDirection + new Vector3(Random.Range(-this.RandomX, this.RandomX), 0)).normalized * this.ProjectileSpeed);
 		}
