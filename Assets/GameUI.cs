@@ -63,6 +63,12 @@ public class GameUI : MonoBehaviour
         Destroy(GameController.Instance.gameObject);
         GameController.Instance.Reset();
     }
+
+    public void Reload()
+    {
+        Destroy(GameController.Instance.gameObject);
+        GameController.Instance.Reload();
+    }
     
     
 }

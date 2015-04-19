@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     private bool controlMan;
 	private bool controlCroco;
 
+    private string currentLevel;
+
     public bool OnlineGame { get; private set;}
 
 	public bool GameOver;
@@ -84,6 +86,7 @@ public class GameController : MonoBehaviour
 
     private void StartLevel(string levelName)
     {
+        currentLevel = levelName;
         Application.LoadLevel(levelName);
     }
 
@@ -99,6 +102,21 @@ public class GameController : MonoBehaviour
         {
             NetworkView.RPC("ResetRequest", RPCMode.Others);
         }
+    }
+
+    public void Reload()
+    {
+        if (PlayerControlsCroco)
+        {
+            NetworkView.RPC("ReloadClient", RPCMode.Others);
+            StartLevel(currentLevel);
+        }
+    }
+
+    [RPC]
+    public void ReloadClient()
+    {
+        StartLevel(currentLevel);
     }
 
     [RPC]
