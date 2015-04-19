@@ -112,6 +112,8 @@ public class Man : MonoBehaviour
 	{
 		Debug.Log("Kicked to head");
 		var o = (GameObject)Instantiate(this.BloodPrefab, this.transform.position, Quaternion.identity);
+	    MyCroco.OwnSpeed = 0;
+        GameUI.Lose(3);
 		Destroy(o, 2);
 		LeanTween.delayedCall(this.gameObject, 0.1f, () => this.gameObject.SetActive(false));
 	}

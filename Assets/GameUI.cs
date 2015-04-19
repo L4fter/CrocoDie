@@ -24,7 +24,7 @@ public class GameUI : MonoBehaviour
 	{
 	    if (Input.GetKeyDown(KeyCode.D))
 	    {
-	        Lose();
+	        Lose(0);
 	    }
 	}
 
@@ -36,26 +36,26 @@ public class GameUI : MonoBehaviour
 		}
 	}
 
-    public static void Lose()
+    public static void Lose(int delay)
     {
         var obj = instance.Img.gameObject;
         var pos = obj.transform.position;
         instance.Img.gameObject.transform.position = new Vector3(pos.x, pos.y + 300, pos.z);
         instance.Img.gameObject.SetActive(true);
-        LeanTween.move(obj, pos, 1.5f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.move(obj, pos, 1.5f).setEase(LeanTweenType.easeOutElastic).setDelay(delay);
 
         
-        instance.ShowButton(200, instance.RepeatButton);
-        instance.ShowButton(-200, instance.BackButton);
+        instance.ShowButton(200, instance.RepeatButton, delay);
+        instance.ShowButton(-200, instance.BackButton, delay);
     }
 
-    private void ShowButton(int offsetX, Button btn)
+    private void ShowButton(int offsetX, Button btn, int delay)
     {
         var obj = btn.gameObject;
         var pos = obj.transform.position;
         btn.gameObject.transform.position = new Vector3(pos.x + offsetX, pos.y, pos.z);
         btn.gameObject.SetActive(true);
-        LeanTween.move(obj, pos, 1f).setEase(LeanTweenType.easeOutCirc).setDelay(1f);
+        LeanTween.move(obj, pos, 1f).setEase(LeanTweenType.easeOutCirc).setDelay(1f + delay);
     }
 
     public void BackToMenu()
