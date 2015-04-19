@@ -16,12 +16,12 @@ public class CrocoAnimator : MonoBehaviour
 	    if (Input.GetKeyDown(KeyCode.N))
 	    {
 	        Debug.Log("N!");
-            anim.SetBool("Open", true);
+            anim.SetTrigger("Open");
         }
         else if (Input.GetKeyDown(KeyCode.M))
         {
             Debug.Log("M!");
-            anim.SetBool("Open", false);
+            anim.SetTrigger("Open");
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
@@ -37,12 +37,12 @@ public class CrocoAnimator : MonoBehaviour
 
     public void OpenCrocoMouth()
     {
-        anim.SetBool("Open", true);
+        anim.SetTrigger("Open");
 		Debug.Log("OK");
     }
 
     public void CloseCrocoMouth()
     {
-        anim.SetBool("Open", false);
+        anim.SetTrigger("Close");
     }
 }
