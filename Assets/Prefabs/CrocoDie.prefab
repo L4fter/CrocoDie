@@ -274,8 +274,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196190}
-  m_LocalRotation: {x: -.0548175387, y: -.704774916, z: -.054895293, w: .705176473}
-  m_LocalPosition: {x: -.816999972, y: .0529999994, z: 0}
+  m_LocalRotation: {x: .000962457736, y: -.70690918, z: .00096192176, w: .707303047}
+  m_LocalPosition: {x: -.416999996, y: .0540000014, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488488}
@@ -732,15 +732,15 @@ MonoBehaviour:
   currentMap: {fileID: 0}
   DampeningTime: 2
   MaxSpeed: 5
-  OwnSpeed: 2
-  Speed: 2
+  OwnSpeed: 0
+  Speed: 0
+  WakingSpeed: 2
   MinVertSpeed: 2
   MaxVertSpeed: 5
   MinWeight: 0
   MaxWeight: 10
   Weight: 0
-  Sleepiness: 0
-  MaxSleepiness: 10
+  WeightLossPerSecond: .200000003
   Goal: {x: 0, y: 0, z: 0}
   Body: {fileID: 11496018}
 --- !u!148 &14884262
@@ -944,7 +944,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .280000001
+      scalar: .600000024
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -959,7 +959,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .357142866
+          value: .5
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -999,7 +999,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    gravityModifier: 0
+    gravityModifier: .0299999993
     inheritVelocity: 0
     maxNumParticles: 1000
   ShapeModule:
@@ -1007,7 +1007,7 @@ ParticleSystem:
     enabled: 1
     type: 4
     radius: .00999999978
-    angle: 15
+    angle: 2
     length: 5
     boxX: 1
     boxY: 1
@@ -2876,7 +2876,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -386120949
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 3
   m_MaxParticleSize: .5
   m_CameraVelocityScale: 0
