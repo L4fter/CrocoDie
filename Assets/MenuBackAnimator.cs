@@ -13,9 +13,9 @@ public class MenuBackAnimator : MonoBehaviour {
 	{
 	    var pos = this.gameObject.transform.position;
 	    this.gameObject.transform.position = new Vector3(pos.x - 0.4f, pos.y, pos.z);
-	    if (pos.x < -400)
+	    if (pos.x < -600)
 	    {
-            this.gameObject.transform.position = new Vector3(1600, pos.y, pos.z);
+            this.gameObject.transform.position = new Vector3(pos.x + 2200, pos.y, pos.z);
 	    }
 	}
 }
