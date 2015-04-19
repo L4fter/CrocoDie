@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6116130}
   m_Layer: 0
   m_Name: CrocoSmell
-  m_TagString: Untagged
+  m_TagString: Croco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   MaxSpeed: 5
   OwnSpeed: 0
   Speed: 0
-  WakingSpeed: .800000012
+  WakingSpeed: .600000024
   MinVertSpeed: 2
   MaxVertSpeed: 5
   MinWeight: 0
@@ -784,7 +784,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1827,7 +1827,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .5
       maxCurve:
         serializedVersion: 2
         m_Curve:

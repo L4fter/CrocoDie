@@ -69,10 +69,11 @@ public class Croco : MonoBehaviour
             this.VerticalUpdate();
 	    }
 
-		if (IsSleepeng)
+		if (this.IsSleepeng)
 		{
 			this.OwnSpeed = 0;
 		}
+
 		this.LoseSomeWeight();
 	}
 
@@ -103,11 +104,13 @@ public class Croco : MonoBehaviour
 		this.OwnSpeed = 0;
 		this.crocoAnimator.Sleep();
 	}
+
 	private void WakeUp()
 	{
 		this.IsSleepeng = false;
 		this.OwnSpeed = this.Speed;
 		this.crocoAnimator.WakeUp();
+		this.Weight = 1;
 	}
 
 
