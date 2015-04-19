@@ -31,12 +31,13 @@ GameObject:
   - 114: {fileID: 11498828}
   - 114: {fileID: 11418590}
   - 114: {fileID: 11405866}
-  - 61: {fileID: 6103130}
   - 114: {fileID: 11408940}
   - 114: {fileID: 11411162}
   - 114: {fileID: 11493258}
   - 95: {fileID: 9566468}
   - 114: {fileID: 11431276}
+  - 60: {fileID: 6097912}
+  - 60: {fileID: 6099730}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.60000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 498512}
@@ -69,8 +70,8 @@ Transform:
   - {fileID: 411100}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6103130
-BoxCollider2D:
+--- !u!60 &6097912
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -80,8 +81,43 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .3125, y: .3125}
+  m_Points:
+    m_Paths:
+    - - {x: .308333337, y: .368750006}
+      - {x: .308333337, y: .372916669}
+      - {x: -.283333331, y: .372916669}
+      - {x: -.545833349, y: .0354166664}
+      - {x: -.604166687, y: -.185416669}
+      - {x: -.604166687, y: -.372916669}
+      - {x: -.362500012, y: -.372916669}
+      - {x: .233333334, y: -.235416666}
+      - {x: .604166687, y: .0645833313}
+      - {x: .604166687, y: .185416669}
+      - {x: .600000024, y: .185416669}
+--- !u!60 &6099730
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128196}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .308333337, y: .368750006}
+      - {x: .308333337, y: .372916669}
+      - {x: -.283333331, y: .372916669}
+      - {x: -.545833349, y: .0354166664}
+      - {x: -.604166687, y: -.185416669}
+      - {x: -.604166687, y: -.372916669}
+      - {x: -.362500012, y: -.372916669}
+      - {x: .233333334, y: -.235416666}
+      - {x: .604166687, y: .0645833313}
+      - {x: .604166687, y: .185416669}
+      - {x: .600000024, y: .185416669}
 --- !u!95 &9566468
 Animator:
   serializedVersion: 3
