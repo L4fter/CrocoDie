@@ -17,6 +17,7 @@ public class Finisher : MonoBehaviour {
 		if (collision2D.gameObject.tag == "PlayerCroco")
 		{
 			Debug.Log("FINISH");
+			GameController.Instance.FuckingWin(0);
 		}
 	}
 }

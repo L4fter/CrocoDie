@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
     {
         controlMan = true;
         controlCroco = true;
-        StartLevel("Tutorial");
+        StartLevel("TestLevel");
     }
 
     [RPC]
@@ -153,5 +153,16 @@ public class GameController : MonoBehaviour
 
 		GameOver = true;
 		GameUI.Lose(time);
+	}
+
+	public void FuckingWin(int time)
+	{
+		if (this.GameOver)
+		{
+			return;
+		}
+
+		this.GameOver = true;
+		GameUI.Win(time);
 	}
 }

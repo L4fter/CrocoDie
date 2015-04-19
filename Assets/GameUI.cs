@@ -26,10 +26,6 @@ public class GameUI : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-	    if (Input.GetKeyDown(KeyCode.D))
-	    {
-	        Lose(0);
-	    }
 	}
 
 	public static float CrocoWeight
@@ -88,6 +84,4 @@ public class GameUI : MonoBehaviour
         Destroy(GameController.Instance.gameObject);
         GameController.Instance.Reload();
     }
-    
-    
 }
