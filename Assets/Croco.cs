@@ -42,6 +42,7 @@ public class Croco : MonoBehaviour
 	private GameController game;
 
 	private bool IsSleepeng;
+	public bool IsDead { get; set; }
 
 	// Use this for initialization
 	private void Start()
@@ -79,7 +80,7 @@ public class Croco : MonoBehaviour
 
 	private void LoseSomeWeight()
 	{
-		if (IsSleepeng)
+		if (IsSleepeng && IsDead)
 		{
 			return;
 		}
@@ -131,6 +132,11 @@ public class Croco : MonoBehaviour
 
 	public void Move(Direction direction)
 	{
+		if (IsDead)
+		{
+			return;
+		}
+
 		LeanTween.cancel(this.gameObject);
 		if (direction == Direction.Down)
 		{
@@ -147,6 +153,11 @@ public class Croco : MonoBehaviour
 
 	public void ApplySpeedChange(float delta)
 	{
+		if (IsDead)
+		{
+			return;
+		}
+
 		this.Speed += delta;
 
 		if (this.Speed > this.WakingSpeed
@@ -158,11 +169,21 @@ public class Croco : MonoBehaviour
 
 	public void ApplyOwnSpeedChange(float delta)
 	{
+		if (IsDead)
+		{
+			return;
+		}
+
 		this.OwnSpeed += delta;
 	}
 
 	public void ApplyWeightChange(float delta)
 	{
+		if (IsDead)
+		{
+			return;
+		}
+
 		this.Weight = Mathf.Clamp(this.Weight + delta, this.MinWeight, this.MaxWeight);
 		this.roundedWeight = Mathf.CeilToInt(Weight);
 
@@ -180,8 +201,9 @@ public class Croco : MonoBehaviour
 
     public void Explode()
     {
-        var crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();
+	    IsDead = true;
         OwnSpeed = 0;
         crocoAnimator.Die();
     }
+
 }
