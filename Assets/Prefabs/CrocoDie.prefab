@@ -723,12 +723,12 @@ MonoBehaviour:
   RowDeltaSpeed: .300000012
   Health: 0
   WeaponColliders:
-  - {fileID: 6049832}
   - {fileID: 5840746}
   BloodPrefab: {fileID: 172780, guid: 786d47123eaa43f459fd71951fb56288, type: 2}
   Head: {fileID: 132608}
   HihgKickKicker: {fileID: 11415624}
   HihgKickCollider: {fileID: 6184828}
+  WeaponCollider: {fileID: 6049832}
 --- !u!114 &11485380
 MonoBehaviour:
   m_ObjectHideFlags: 1

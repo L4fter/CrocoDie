@@ -27,6 +27,7 @@ public class Man : MonoBehaviour
 
 	public PlayerKicker HihgKickKicker; 
 	public Collider2D HihgKickCollider; 
+	public Collider2D WeaponCollider; 
 
     
 	// Use this for initialization
@@ -110,11 +111,13 @@ public class Man : MonoBehaviour
 
 		this.HihgKickKicker.enabled = true;
 		this.HihgKickCollider.enabled = true;
+		this.WeaponCollider.enabled = true;
 
 		yield return new WaitForSeconds(0.02f);
 		
 		this.HihgKickKicker.enabled = false;
 		this.HihgKickCollider.enabled = false;
+		this.WeaponCollider.enabled = true;
 
 		isKicking = false;
 	}
