@@ -15,7 +15,7 @@
 
             if (croco != null)
             {
-                croco.Explode();
+                croco.Die();
                 GameUI.Lose(3);
                 this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
             }

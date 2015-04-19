@@ -90,7 +90,6 @@ public class Croco : MonoBehaviour
 		{
 			this.Body.RemovePart();
 			roundedWeight = Mathf.CeilToInt(this.Weight);
-			Debug.Log(string.Format("Rounded weight = {0}", roundedWeight));
 
 			if (Weight <= 0)
 			{
@@ -153,9 +152,17 @@ public class Croco : MonoBehaviour
 
 	public void ApplySpeedChange(float delta)
 	{
-		if (IsDead)
+		if (IsDead && delta > 0)
 		{
 			return;
+		}
+
+		if (this.Speed > 2 && delta < 0)
+		{
+			delta = -Speed * 0.8f;
+			this.GetComponentInChildren<Man>().FallOver(Speed * 0.8f);
+
+			this.Die();
 		}
 
 		this.Speed += delta;
@@ -165,6 +172,7 @@ public class Croco : MonoBehaviour
 		{
 			this.WakeUp();
 		}
+
 	}
 
 	public void ApplyOwnSpeedChange(float delta)
@@ -199,7 +207,7 @@ public class Croco : MonoBehaviour
 		this.crocoAnimator.CloseCrocoMouth();
 	}
 
-    public void Explode()
+    public void Die()
     {
 	    IsDead = true;
         OwnSpeed = 0;

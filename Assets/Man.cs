@@ -40,7 +40,6 @@ public class Man : MonoBehaviour
 
 	public void LowKick()
 	{
-        Debug.Log("Low kick!");
 		if (isKicking)
 		{
 			return;
@@ -78,14 +77,14 @@ public class Man : MonoBehaviour
 	private IEnumerator HighKickCoroutine()
 	{
 		isKicking = true;
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds(0.15f);
 
 		foreach (var weaponCollider in WeaponColliders)
 		{
 			weaponCollider.enabled = true;
 		}
 
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.27f);
 
 		foreach (var weaponCollider in WeaponColliders)
 		{
@@ -117,5 +116,10 @@ public class Man : MonoBehaviour
         GameUI.Lose(3);
 		Destroy(o, 2);
 		LeanTween.delayedCall(this.gameObject, 0.1f, () => this.gameObject.SetActive(false));
+	}
+
+	public void FallOver(float speed)
+	{
+		LeanTween.moveLocalX(this.gameObject, this.transform.localPosition.x + 10, 10/speed);
 	}
 }
