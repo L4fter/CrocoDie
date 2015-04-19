@@ -23,8 +23,12 @@ public class WaterBrizgi : MonoBehaviour {
 		{
 			this.particles.emissionRate = 0;
 		}
+		else
+		{
+			this.particles.emissionRate = 10;
+		}
 
-		this.particles.emissionRate = speed * 5;
+//		this.particles.emissionRate = speed * 2;
 		this.particles.startSpeed = speed/2;
 	}
 }

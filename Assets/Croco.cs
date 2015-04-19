@@ -69,6 +69,10 @@ public class Croco : MonoBehaviour
             this.VerticalUpdate();
 	    }
 
+		if (IsSleepeng)
+		{
+			this.OwnSpeed = 0;
+		}
 		this.LoseSomeWeight();
 	}
 

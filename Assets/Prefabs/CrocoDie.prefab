@@ -275,7 +275,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196190}
   m_LocalRotation: {x: .000962457736, y: -.70690918, z: .00096192176, w: .707303047}
-  m_LocalPosition: {x: -.416999996, y: .0540000014, z: -0}
+  m_LocalPosition: {x: -.546000004, y: .0529999994, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488488}
@@ -316,7 +316,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111978}
   m_LocalRotation: {x: .000565109949, y: -.706909478, z: .000456151436, w: .707303703}
-  m_LocalPosition: {x: -.481000006, y: .206, z: -0}
+  m_LocalPosition: {x: -.70599997, y: .206, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488488}
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyCroco: {fileID: 11496722}
-  RowDeltaSpeed: .100000001
+  RowDeltaSpeed: .300000012
   Health: 0
   WeaponColliders:
   - {fileID: 6160562}
@@ -734,13 +734,13 @@ MonoBehaviour:
   MaxSpeed: 5
   OwnSpeed: 0
   Speed: 0
-  WakingSpeed: 2
+  WakingSpeed: .800000012
   MinVertSpeed: 2
   MaxVertSpeed: 5
   MinWeight: 0
   MaxWeight: 10
   Weight: 0
-  WeightLossPerSecond: .200000003
+  WeightLossPerSecond: .100000001
   Goal: {x: 0, y: 0, z: 0}
   Body: {fileID: 11496018}
 --- !u!148 &14884262
@@ -780,7 +780,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
@@ -817,7 +817,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1018,7 +1018,7 @@ ParticleSystem:
     randomDirection: 0
   EmissionModule:
     enabled: 1
-    m_Type: 0
+    m_Type: 1
     rate:
       scalar: 10
       maxCurve:
@@ -1823,7 +1823,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
@@ -1860,7 +1860,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2061,7 +2061,7 @@ ParticleSystem:
     randomDirection: 0
   EmissionModule:
     enabled: 1
-    m_Type: 0
+    m_Type: 1
     rate:
       scalar: 10
       maxCurve:
