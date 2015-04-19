@@ -21,7 +21,7 @@
                 var speed = UnityEngine.Random.value + 0.5f;
 
                 InitFence(fence.GetComponent<FenceWonder>(), scale, speed, magnitude);
-                for (int i = 1; i < 80; i++)
+                for (int i = 1; i < 400; i++)
                 {
                     var pos = fence.transform.position;
                     var next = Instantiate(fence.gameObject, new Vector3(pos.x + i, pos.y, pos.z), Quaternion.identity) as GameObject;
