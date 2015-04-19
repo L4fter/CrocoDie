@@ -18,7 +18,7 @@
             {
 				croco.Explode(3);
                
-                //this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
+                this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
             }
 
         }

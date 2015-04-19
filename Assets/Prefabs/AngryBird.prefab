@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.4200001, y: -1.25999999, z: 0}
+  m_LocalPosition: {x: 9.48999977, y: -6.59000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404616}
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 129530}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15ff69a6dcc5fd041b0301557174406a, type: 2}
+  m_Controller: {fileID: 9100000, guid: a53a0cbc80b3e88449577c1432d5287a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Amplitude: .300000012
   Period: 2
+  Phase: 0
 --- !u!114 &11457456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,7 +281,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -386120949
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 9d7ddcf8c580fa64780499e0b79b4649, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43ef914747e9718459ec85d8cf286cd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
