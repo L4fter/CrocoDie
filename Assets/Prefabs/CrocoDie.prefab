@@ -26,9 +26,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 431688}
-  - 61: {fileID: 6160562}
   - 50: {fileID: 5098730}
   - 114: {fileID: 11464116}
+  - 60: {fileID: 6049832}
   m_Layer: 0
   m_Name: WeaponUp
   m_TagString: Weapon
@@ -472,6 +472,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .639999986
+--- !u!60 &6049832
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110206}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -.363947153, y: .101505995}
+      - {x: .643976748, y: .763950348}
+      - {x: .906238854, y: .64677}
+      - {x: .811134875, y: .282823682}
+      - {x: -.166296124, y: -.339263201}
 --- !u!61 &6116130
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -485,19 +503,6 @@ BoxCollider2D:
   m_Offset: {x: 1.76146197, y: .249284506}
   serializedVersion: 2
   m_Size: {x: .740965843, y: .501430988}
---- !u!61 &6160562
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110206}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -.0788687766, y: -.0781164169}
-  serializedVersion: 2
-  m_Size: {x: .400000006, y: .790000021}
 --- !u!61 &6176054
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -594,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be0b37f13e1c2d44bf8cdc4f2593dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 6160562}
+  component: {fileID: 6049832}
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &11466628
 MonoBehaviour:
@@ -634,7 +639,7 @@ MonoBehaviour:
   RowDeltaSpeed: .300000012
   Health: 0
   WeaponColliders:
-  - {fileID: 6160562}
+  - {fileID: 6049832}
   - {fileID: 5840746}
   BloodPrefab: {fileID: 172780, guid: 786d47123eaa43f459fd71951fb56288, type: 2}
 --- !u!114 &11485380
