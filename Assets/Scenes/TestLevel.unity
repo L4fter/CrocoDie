@@ -203,6 +203,10 @@ Prefab:
       propertyPath: AimDirection.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 149028, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
   m_IsPrefabParent: 0
@@ -404,6 +408,10 @@ Prefab:
     - target: {fileID: 11415954, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
       propertyPath: AimDirection.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149028, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
@@ -1586,6 +1594,10 @@ Prefab:
       propertyPath: m_Name
       value: CocoGun 2
       objectReference: {fileID: 0}
+    - target: {fileID: 149028, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
   m_IsPrefabParent: 0
@@ -1882,6 +1894,10 @@ Prefab:
     - target: {fileID: 11415954, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
       propertyPath: AimDirection.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149028, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
@@ -2230,6 +2246,10 @@ Prefab:
     - target: {fileID: 19818064, guid: fd926e02b1f1a044fb21af4fa1116f80, type: 2}
       propertyPath: InitialModule.startSize.minCurve.m_Curve.Array.data[0].value
       value: .333333313
+      objectReference: {fileID: 0}
+    - target: {fileID: 149028, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89876471ea1646d48ba66b1bae7bc0a2, type: 2}

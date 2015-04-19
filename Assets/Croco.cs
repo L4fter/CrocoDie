@@ -208,6 +208,7 @@ public class Croco : MonoBehaviour
 
 	public void ApplyWeightChange(float delta)
 	{
+		Debug.Log("Apply weight");
 		if (IsDead)
 		{
 			return;
