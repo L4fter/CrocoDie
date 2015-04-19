@@ -190,7 +190,7 @@ public class Croco : MonoBehaviour
 			return;
 		}
 
-		if (this.Speed > 2.5f && delta < 0)
+		if (this.Speed > 2f && delta < 0)
 		{
 			delta = -Speed * 0.8f;
 			this.GetComponentInChildren<Man>().FallOver(Speed * 0.8f);
@@ -243,6 +243,7 @@ public class Croco : MonoBehaviour
 	{
 		IsDead = true;
 		OwnSpeed = 0;
+        
 		crocoAnimator.Die();
 
 		if (IsMineCroco)
@@ -260,6 +261,8 @@ public class Croco : MonoBehaviour
         Instantiate(Veslo, gameObject.transform.position, Quaternion.identity);
         Destroy(Man, 0.2f);
         Destroy(Bang, 1.1f);
+//        LeanTween.scale(this.gameObject, new Vector3(1, -1, 1), 0.01f).setDelay(0.2f);
+//        LeanTween.moveY(this.gameObject, 0.02f, 0.01f).setDelay(0.2f);
         crocoAnimator.Die();
         GameController.Instance.Loose(i);
     }
