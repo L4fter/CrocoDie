@@ -21,6 +21,7 @@ public class SpeedChanger : MonoBehaviour
 
 		if (croco != null)
 		{
+			Debug.Log("Speed changer croco");
 			croco.ApplySpeedChange(this.Delta);
 			this.SendMessage("Destroy", SendMessageOptions.DontRequireReceiver);
 		}
