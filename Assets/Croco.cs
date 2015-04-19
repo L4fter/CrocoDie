@@ -20,6 +20,8 @@ public class Croco : MonoBehaviour
 
 	public float MaxVertSpeed;
 
+	public GameObject Zzz;
+
 	public float VertSpeed
 	{
 		get
@@ -122,6 +124,7 @@ public class Croco : MonoBehaviour
 		this.IsSleepeng = true;
 		this.OwnSpeed = 0;
 		this.crocoAnimator.Sleep();
+		this.Zzz.SetActive(true);
 	}
 
 	private void WakeUp()
@@ -130,6 +133,7 @@ public class Croco : MonoBehaviour
 		this.OwnSpeed = this.Speed;
 		this.crocoAnimator.WakeUp();
 		this.Weight = 1;
+		this.Zzz.SetActive(false);
 	}
 
 	private float targetVerticalPos;
@@ -190,10 +194,15 @@ public class Croco : MonoBehaviour
 			return;
 		}
 
-		if (this.Speed > 2f && delta < 0)
+		if ((this.Speed > 2f && delta < 0) ||
+			this.Speed < -delta)
 		{
 			delta = -Speed * 0.8f;
-			this.GetComponentInChildren<Man>().FallOver(Speed * 0.8f);
+			var man = this.GetComponentInChildren<Man>();
+			if (man != null && man)
+			{
+				man.FallOver(Speed * 0.8f);
+			}
 
 			this.Die(2);
 		}
