@@ -26,6 +26,11 @@ public class Rage : MonoBehaviour
 			return;
 		}
 
+		if (Enemy == null || !Enemy)
+		{
+			return;
+		}
+
 		if (Enemy.transform.position.x > this.transform.position.x)
 		{
 			return;
