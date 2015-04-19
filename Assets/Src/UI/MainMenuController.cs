@@ -3,7 +3,7 @@ using System.Collections;
 
 using UnityEngine.UI;
 
-public class UIController : MonoBehaviour
+public class MainMenuController : MonoBehaviour
 {
     public Button CreateBtn;
 
@@ -11,8 +11,13 @@ public class UIController : MonoBehaviour
 
     public Button SingleBtn;
 
-	// Use this for initialization
-	void Start () {
+    public Canvas Menu;
+
+    public Canvas LoseMenu;
+
+    // Use this for initialization
+	void Start ()
+	{
 	    this.CreateBtn.GetComponentInChildren<Text>().text = "Create";
 	    this.JoinBtn.GetComponentInChildren<Text>().text = "Join";
 	    this.SingleBtn.GetComponentInChildren<Text>().text = "Single play";

@@ -598,6 +598,8 @@ MonoBehaviour:
   CreateBtn: {fileID: 1693502399}
   JoinBtn: {fileID: 1900317452}
   SingleBtn: {fileID: 1837561129}
+  Menu: {fileID: 1631222661}
+  LoseMenu: {fileID: 0}
 --- !u!1 &1631222658
 GameObject:
   m_ObjectHideFlags: 0

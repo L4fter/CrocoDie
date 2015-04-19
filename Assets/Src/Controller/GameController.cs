@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 
 
@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
     {
         controlMan = true;
         controlCroco = true;
-        Application.LoadLevel("TestLevel");
+        StartLevel("TestLevel");
     }
 
     [RPC]
@@ -84,6 +84,18 @@ public class GameController : MonoBehaviour
     public void Connect()
     {
         StartCoroutine(this.ConnectRoutine());
+    }
+
+    public void Reset()
+    {
+        StartLevel("Menu");
+        NetworkView.RPC("ResetRequest", RPCMode.Others);
+    }
+
+    [RPC]
+    public void ResetRequest()
+    {
+        StartLevel("Menu");
     }
 
     private IEnumerator ConnectRoutine()

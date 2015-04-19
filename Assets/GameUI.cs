@@ -5,6 +5,12 @@ public class GameUI : MonoBehaviour
 {
 	public Slider WeightSlider;
 
+    public Button RepeatButton;
+
+    public Button BackButton;
+
+    public Image Img;
+
 	private static GameUI instance;
 
 	// Use this for initialization
@@ -16,6 +22,10 @@ public class GameUI : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
+	    if (Input.GetKeyDown(KeyCode.D))
+	    {
+	        Lose();
+	    }
 	}
 
 	public static float CrocoWeight
@@ -25,4 +35,34 @@ public class GameUI : MonoBehaviour
 			instance.WeightSlider.value = value;
 		}
 	}
+
+    public static void Lose()
+    {
+        var obj = instance.Img.gameObject;
+        var pos = obj.transform.position;
+        instance.Img.gameObject.transform.position = new Vector3(pos.x, pos.y + 300, pos.z);
+        instance.Img.gameObject.SetActive(true);
+        LeanTween.move(obj, pos, 1.5f).setEase(LeanTweenType.easeOutElastic);
+
+        
+        instance.ShowButton(200, instance.RepeatButton);
+        instance.ShowButton(-200, instance.BackButton);
+    }
+
+    private void ShowButton(int offsetX, Button btn)
+    {
+        var obj = btn.gameObject;
+        var pos = obj.transform.position;
+        btn.gameObject.transform.position = new Vector3(pos.x + offsetX, pos.y, pos.z);
+        btn.gameObject.SetActive(true);
+        LeanTween.move(obj, pos, 1f).setEase(LeanTweenType.easeOutCirc).setDelay(1f);
+    }
+
+    public void BackToMenu()
+    {
+        Destroy(GameController.Instance.gameObject);
+        GameController.Instance.Reset();
+    }
+    
+    
 }
