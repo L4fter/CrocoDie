@@ -44,8 +44,10 @@ public class GameUI : MonoBehaviour
         instance.Img.gameObject.SetActive(true);
         LeanTween.move(obj, pos, 1.5f).setEase(LeanTweenType.easeOutElastic).setDelay(delay);
 
-        
-        instance.ShowButton(200, instance.RepeatButton, delay);
+        if (GameController.Instance.PlayerControlsCroco)
+        {
+            instance.ShowButton(200, instance.RepeatButton, delay);
+        }
         instance.ShowButton(-200, instance.BackButton, delay);
     }
 
