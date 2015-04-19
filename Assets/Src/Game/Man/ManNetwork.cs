@@ -17,7 +17,7 @@
 
         public void LowKick()
         {
-            if (game.PlayerControlsMan)
+            if (game.OnlineGame && game.PlayerControlsMan)
             {
                 NetworkView.RPC("Kick", RPCMode.Others, "LowKick");
             }
@@ -25,7 +25,7 @@
 
         public void MidKick()
         {
-            if (game.PlayerControlsMan)
+            if (game.OnlineGame && game.PlayerControlsMan)
             {
                 NetworkView.RPC("Kick", RPCMode.Others, "MidKick");
             }
@@ -33,7 +33,7 @@
 
         public void HighKick()
         {
-            if (game.PlayerControlsMan)
+            if (game.OnlineGame && game.PlayerControlsMan)
             {
                 NetworkView.RPC("Kick", RPCMode.Others, "HighKick");
             }

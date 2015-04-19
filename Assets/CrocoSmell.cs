@@ -20,13 +20,13 @@ public class CrocoSmell : MonoBehaviour
 			var crocoAnimator = this.transform.parent.GetComponentInChildren<CrocoAnimator>();
 			crocoAnimator.OpenCrocoMouth();
         }
-        else if (tag == "Bomb")
-        {
-            var crocoAnimator = this.transform.parent.GetComponentInChildren<CrocoAnimator>();
-            crocoAnimator.OpenCrocoMouth();
-            crocoAnimator.Die();
-            this.transform.parent.GetComponentInParent<Croco>().OwnSpeed = 0;
-            GameUI.Lose(3);
-        }
+//        else if (tag == "Bomb")
+//        {
+//            var crocoAnimator = this.transform.parent.GetComponentInChildren<CrocoAnimator>();
+//            crocoAnimator.OpenCrocoMouth();
+//            crocoAnimator.Die();
+//            this.transform.parent.GetComponentInParent<Croco>().OwnSpeed = 0;
+//            GameUI.Lose(3);
+//        }
 	}
 }

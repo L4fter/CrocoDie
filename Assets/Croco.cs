@@ -174,4 +174,11 @@ public class Croco : MonoBehaviour
 
 		this.crocoAnimator.CloseCrocoMouth();
 	}
+
+    public void Explode()
+    {
+        var crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();
+        OwnSpeed = 0;
+        crocoAnimator.Die();
+    }
 }
