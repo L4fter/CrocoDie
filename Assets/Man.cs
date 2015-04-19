@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -23,6 +24,9 @@ public class Man : MonoBehaviour
 	public GameObject Head;
 
 	public enum Action { LowKick = 1, MidKick = 2, HighKick = 3, Idle = 4}
+
+	public PlayerKicker HihgKickKicker; 
+	public Collider2D HihgKickCollider; 
 
     
 	// Use this for initialization
@@ -58,6 +62,29 @@ public class Man : MonoBehaviour
 		{
 			return;
 		}
+
+		this.CurrentAction = Action.MidKick;
+		this.StartCoroutine(this.MidKickCoroutine());
+	}
+
+	private IEnumerator MidKickCoroutine()
+	{
+		isKicking = true;
+		yield return new WaitForSeconds(0.25f);
+
+		foreach (var weaponCollider in WeaponColliders)
+		{
+			weaponCollider.enabled = true;
+		}
+
+		yield return new WaitForSeconds(0.27f);
+
+		foreach (var weaponCollider in WeaponColliders)
+		{
+			weaponCollider.enabled = false;
+		}
+		
+		isKicking = false;
 	}
 
 	public void HighKick()
@@ -81,18 +108,13 @@ public class Man : MonoBehaviour
 		isKicking = true;
 		yield return new WaitForSeconds(0.25f);
 
-		foreach (var weaponCollider in WeaponColliders)
-		{
-			weaponCollider.enabled = true;
-		}
+		this.HihgKickKicker.enabled = true;
+		this.HihgKickCollider.enabled = true;
 
-		yield return new WaitForSeconds(0.27f);
-
-		foreach (var weaponCollider in WeaponColliders)
-		{
-			weaponCollider.enabled = false;
-		}
-
+		yield return new WaitForSeconds(0.02f);
+		
+		this.HihgKickKicker.enabled = false;
+		this.HihgKickCollider.enabled = false;
 
 		isKicking = false;
 	}
