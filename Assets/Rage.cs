@@ -26,6 +26,11 @@ public class Rage : MonoBehaviour
 			return;
 		}
 
+		if (Enemy.transform.position.x > this.transform.position.x)
+		{
+			return;
+		}
+
 		if ((Enemy.transform.position - this.transform.position).magnitude < RageDistance)
 		{
 			//Offset to head
