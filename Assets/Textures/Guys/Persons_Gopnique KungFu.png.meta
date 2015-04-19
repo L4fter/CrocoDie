@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: b58930373e69fa64986e0c765d9d45bf
+timeCreated: 1429417027
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Persons_Gopnique KungFu_0
+    21300002: Persons_Gopnique KungFu_1
+    21300004: Persons_Gopnique KungFu_2
+    21300006: Persons_Gopnique KungFu_3
+    21300008: Persons_Gopnique KungFu_4
+    21300010: Persons_Gopnique KungFu_5
+    21300012: Persons_Gopnique KungFu_6
+    21300014: Persons_Gopnique KungFu_7
+    21300016: Persons_Gopnique KungFu_8
+    21300018: Persons_Gopnique KungFu_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 180
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Persons_Gopnique KungFu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_1
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_2
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_3
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_4
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_5
+      rect:
+        serializedVersion: 2
+        x: 2865
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_6
+      rect:
+        serializedVersion: 2
+        x: 3438
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_7
+      rect:
+        serializedVersion: 2
+        x: 4011
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_8
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Persons_Gopnique KungFu_9
+      rect:
+        serializedVersion: 2
+        x: 5157
+        y: 7
+        width: 573
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

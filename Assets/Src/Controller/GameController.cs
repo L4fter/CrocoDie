@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
     {
         controlMan = true;
         controlCroco = true;
-        StartLevel("TestLevel");
+        StartLevel("Tutorial");
     }
 
     [RPC]
