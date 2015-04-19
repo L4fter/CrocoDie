@@ -46,6 +46,16 @@ public class CrocoAnimator : MonoBehaviour
         anim.SetTrigger("Close");
     }
 
+	public void Sleep()
+	{
+		anim.SetBool("Sleep", true);
+	}
+
+	public void WakeUp()
+	{
+		anim.SetBool("Sleep", false);
+	}
+
     public void Die()
     {
         anim.SetBool("Die", true);

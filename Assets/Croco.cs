@@ -53,6 +53,7 @@ public class Croco : MonoBehaviour
 	        Destroy(this.GetComponent<CrocoController>());
 	    }
 		this.roundedWeight = Mathf.CeilToInt(this.Weight);
+		this.crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();
 	}
 
 	// Update is called once per frame
@@ -96,18 +97,20 @@ public class Croco : MonoBehaviour
 	{
 		this.IsSleepeng = true;
 		this.OwnSpeed = 0;
-		Debug.Log("Sleep");
+		this.crocoAnimator.Sleep();
 	}
 	private void WakeUp()
 	{
 		this.IsSleepeng = false;
 		this.OwnSpeed = this.Speed;
-		Debug.Log("Wake");
+		this.crocoAnimator.WakeUp();
 	}
 
 
 	private float targetVerticalPos;
-	
+
+	private CrocoAnimator crocoAnimator;
+
 	private void VerticalUpdate()
 	{
 		
@@ -165,7 +168,6 @@ public class Croco : MonoBehaviour
 			this.Body.RemovePart();
 		}
 
-		var crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();
-		crocoAnimator.CloseCrocoMouth();
+		this.crocoAnimator.CloseCrocoMouth();
 	}
 }
