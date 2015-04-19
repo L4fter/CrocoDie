@@ -11,6 +11,8 @@
 
         public float ScaleSpeed;
 
+        public float ScaleBase = 0.4f;
+
         public float WonderSpeed;
 
         private Vector3 start;
@@ -26,7 +28,7 @@
         {
             var sin = (float)Math.Sin(Time.time * this.WonderSpeed);
             this.transform.position = new Vector3(this.start.x + sin * this.Magnitude, this.start.y, this.start.z);
-            var size = 0.4f + ((float)Math.Sin(Time.time * this.ScaleSpeed) + 1) / 8;
+            var size = ScaleBase + ((float)Math.Sin(Time.time * this.ScaleSpeed) + 1) / 8;
             this.transform.localScale = new Vector3(size, size, size);
         }
     }
