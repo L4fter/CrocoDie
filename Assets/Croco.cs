@@ -185,7 +185,7 @@ public class Croco : MonoBehaviour
 			delta = -Speed * 0.8f;
 			this.GetComponentInChildren<Man>().FallOver(Speed * 0.8f);
 
-			this.Die();
+			this.Die(2);
 		}
 
 		this.Speed += delta;
@@ -228,10 +228,11 @@ public class Croco : MonoBehaviour
 		this.crocoAnimator.CloseCrocoMouth();
 	}
 
-	public void Die()
+	public void Die(int i)
 	{
 		IsDead = true;
 		OwnSpeed = 0;
 		crocoAnimator.Die();
+		GameController.Instance.Loose(i);
 	}
 }
