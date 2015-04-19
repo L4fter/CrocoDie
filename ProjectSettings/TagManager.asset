@@ -9,6 +9,7 @@ TagManager:
   - Shield
   - Head
   - Food
+  - Bomb
   layers:
   - Default
   - TransparentFX

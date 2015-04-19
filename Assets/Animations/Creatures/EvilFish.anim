@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Fish
+  m_Name: EvilFish
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,20 +18,20 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - time: .333333343
-      value: {fileID: 21300002, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - time: .666666687
-      value: {fileID: 21300000, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - time: 1
-      value: {fileID: 21300004, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - time: 1.25
-      value: {fileID: 21300004, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
+      value: {fileID: 21300000, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - time: .100000001
+      value: {fileID: 21300002, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - time: .200000003
+      value: {fileID: 21300000, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - time: .300000012
+      value: {fileID: 21300004, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - time: .400000006
+      value: {fileID: 21300000, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -45,15 +45,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - {fileID: 21300002, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - {fileID: 21300000, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - {fileID: 21300004, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
-    - {fileID: 21300004, guid: 0130e48512d0af540a50f46ad2ea6335, type: 3}
+    - {fileID: 21300000, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - {fileID: 21300002, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - {fileID: 21300000, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - {fileID: 21300004, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
+    - {fileID: 21300000, guid: df6030b0f263b3e419b83655e12d8644, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: 1.33333337
+    m_StopTime: .416666687
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

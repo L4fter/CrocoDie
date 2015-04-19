@@ -45,4 +45,9 @@ public class CrocoAnimator : MonoBehaviour
     {
         anim.SetTrigger("Close");
     }
+
+    public void Die()
+    {
+        anim.SetBool("Die", true);
+    }
 }
