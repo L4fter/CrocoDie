@@ -539,6 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkView: {fileID: 1376564159}
+  GameOver: 0
 --- !u!4 &1376564158
 Transform:
   m_ObjectHideFlags: 0

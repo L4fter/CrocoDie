@@ -41,7 +41,7 @@ public class Rage : MonoBehaviour
 		var dir = Target - this.transform.position;
 		Target += dir * 3;
 
-		LeanTween.move(this.gameObject, Target, 8f).setDelay(0.3f).setEase(LeanTweenType.linear).setOrientToPath(true);
+		LeanTween.move(this.gameObject, Target, 6f).setDelay(0.0f).setEase(LeanTweenType.linear).setOrientToPath(true);
 	}
 
 	public void OnDisable()

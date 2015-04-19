@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
 
     public bool OnlineGame { get; private set;}
 
+	public bool GameOver;
+
     public bool PlayerControlsMan
     {
         get
@@ -126,6 +128,12 @@ public class GameController : MonoBehaviour
 
 	public void Loose(int time)
 	{
+		if (GameOver)
+		{
+			return;
+		}
+
+		GameOver = true;
 		GameUI.Lose(time);
 	}
 }
