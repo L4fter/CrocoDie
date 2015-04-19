@@ -3323,6 +3323,10 @@ Prefab:
       propertyPath: m_Name
       value: EnemyGuy 3
       objectReference: {fileID: 0}
+    - target: {fileID: 151484, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
+      propertyPath: m_TagString
+      value: EnemyCroco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
   m_IsPrefabParent: 0
@@ -5937,6 +5941,10 @@ Prefab:
       propertyPath: OwnSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 151484, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
+      propertyPath: m_TagString
+      value: EnemyCroco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
   m_IsPrefabParent: 0
@@ -6138,6 +6146,10 @@ Prefab:
       propertyPath: m_Name
       value: EnemyGuy 2
       objectReference: {fileID: 0}
+    - target: {fileID: 151484, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
+      propertyPath: m_TagString
+      value: EnemyCroco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
   m_IsPrefabParent: 0
@@ -6245,6 +6257,10 @@ Prefab:
     - target: {fileID: 151484, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
       propertyPath: m_Name
       value: EnemyGuy 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 151484, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
+      propertyPath: m_TagString
+      value: EnemyCroco
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
@@ -6395,6 +6411,10 @@ Prefab:
     - target: {fileID: 14859364, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 151484, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}
+      propertyPath: m_TagString
+      value: EnemyCroco
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36e14e76f4323254b8bbf8ae95bac226, type: 2}

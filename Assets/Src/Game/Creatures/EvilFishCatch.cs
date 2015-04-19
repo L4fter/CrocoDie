@@ -10,7 +10,7 @@
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
             var tag = collider2D.gameObject.tag;
-            if (tag == "PlayerCroco")
+            if (tag == "PlayerCroco" || tag == "EnemyCroco")
             {
                 fish.SpeedUp();
             }

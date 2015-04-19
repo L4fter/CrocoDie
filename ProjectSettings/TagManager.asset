@@ -11,6 +11,7 @@ TagManager:
   - Food
   - Bomb
   - Croco
+  - EnemyCroco
   layers:
   - Default
   - TransparentFX
