@@ -2,7 +2,7 @@
 
 public class Croco : MonoBehaviour
 {
-    public bool IsMineCroco = true;
+	public bool IsMineCroco = true;
 
 	public Map currentMap;
 
@@ -11,10 +11,13 @@ public class Croco : MonoBehaviour
 	public float MaxSpeed = 10;
 
 	public float OwnSpeed;
+
 	public float Speed;
+
 	public float WakingSpeed;
 
 	public float MinVertSpeed;
+
 	public float MaxVertSpeed;
 
 	public float VertSpeed
@@ -28,12 +31,16 @@ public class Croco : MonoBehaviour
 	}
 
 	public float MinWeight;
+
 	public float MaxWeight;
+
 	public float Weight;
+
 	public float WeightLossPerSecond;
+
 	private int roundedWeight;
-	
-    public Vector3 Goal; //used when player control man
+
+	public Vector3 Goal; //used when player control man
 
 	public CrocoBody Body;
 
@@ -42,17 +49,18 @@ public class Croco : MonoBehaviour
 	private GameController game;
 
 	private bool IsSleepeng;
+
 	public bool IsDead { get; set; }
 
 	// Use this for initialization
 	private void Start()
 	{
 		currentMap = FindObjectOfType<Map>();
-	    game = GameController.Instance;
-	    if (!game.PlayerControlsCroco)
-	    {
-	        Destroy(this.GetComponent<CrocoController>());
-	    }
+		game = GameController.Instance;
+		if (!game.PlayerControlsCroco)
+		{
+			Destroy(this.GetComponent<CrocoController>());
+		}
 		this.roundedWeight = Mathf.CeilToInt(this.Weight);
 		this.crocoAnimator = this.GetComponentInChildren<CrocoAnimator>();
 	}
@@ -60,15 +68,15 @@ public class Croco : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-	    if (!game.PlayerControlsCroco)
-	    {
-	        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
-	    }
-	    else
-	    {
-            this.ForwardUpdate();
-            this.VerticalUpdate();
-	    }
+		if (!game.PlayerControlsCroco)
+		{
+			gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, Goal, Time.deltaTime * 25);
+		}
+		else
+		{
+			this.ForwardUpdate();
+			this.VerticalUpdate();
+		}
 
 		if (this.IsSleepeng)
 		{
@@ -80,7 +88,7 @@ public class Croco : MonoBehaviour
 
 	private void LoseSomeWeight()
 	{
-		if (IsSleepeng && IsDead)
+		if (IsSleepeng || IsDead)
 		{
 			return;
 		}
@@ -88,8 +96,9 @@ public class Croco : MonoBehaviour
 		Weight -= WeightLossPerSecond * Time.deltaTime;
 		if (this.Weight < roundedWeight)
 		{
+			Debug.Log(string.Format("Weight: {0}, rounded: {1}", Weight, roundedWeight));
 			this.Body.RemovePart();
-			roundedWeight = Mathf.CeilToInt(this.Weight);
+			roundedWeight = Mathf.FloorToInt(this.Weight);
 
 			if (Weight <= 0)
 			{
@@ -113,14 +122,12 @@ public class Croco : MonoBehaviour
 		this.Weight = 1;
 	}
 
-
 	private float targetVerticalPos;
 
 	private CrocoAnimator crocoAnimator;
 
 	private void VerticalUpdate()
 	{
-		
 	}
 
 	private void ForwardUpdate()
@@ -157,7 +164,7 @@ public class Croco : MonoBehaviour
 			return;
 		}
 
-		if (this.Speed > 2 && delta < 0)
+		if (this.Speed > 4 && delta < 0)
 		{
 			delta = -Speed * 0.8f;
 			this.GetComponentInChildren<Man>().FallOver(Speed * 0.8f);
@@ -167,12 +174,10 @@ public class Croco : MonoBehaviour
 
 		this.Speed += delta;
 
-		if (this.Speed > this.WakingSpeed
-			&& IsSleepeng)
+		if (this.Speed > this.WakingSpeed && IsSleepeng)
 		{
 			this.WakeUp();
 		}
-
 	}
 
 	public void ApplyOwnSpeedChange(float delta)
@@ -193,7 +198,7 @@ public class Croco : MonoBehaviour
 		}
 
 		this.Weight = Mathf.Clamp(this.Weight + delta, this.MinWeight, this.MaxWeight);
-		this.roundedWeight = Mathf.CeilToInt(Weight);
+		this.roundedWeight = Mathf.FloorToInt(Weight);
 
 		if (delta > 0)
 		{
@@ -207,11 +212,10 @@ public class Croco : MonoBehaviour
 		this.crocoAnimator.CloseCrocoMouth();
 	}
 
-    public void Die()
-    {
-	    IsDead = true;
-        OwnSpeed = 0;
-        crocoAnimator.Die();
-    }
-
+	public void Die()
+	{
+		IsDead = true;
+		OwnSpeed = 0;
+		crocoAnimator.Die();
+	}
 }

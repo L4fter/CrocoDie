@@ -123,4 +123,9 @@ public class GameController : MonoBehaviour
         }
         
     }
+
+	public void Loose(int time)
+	{
+		GameUI.Lose(time);
+	}
 }
