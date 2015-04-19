@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     private bool controlMan;
 	private bool controlCroco;
 
+    public bool OnlineGame { get; private set;}
+
     public bool PlayerControlsMan
     {
         get
@@ -53,6 +55,7 @@ public class GameController : MonoBehaviour
     [RPC]
     public void LoadServerGame()
     {
+        OnlineGame = true;
         controlMan = false;
         controlCroco = true;
         Debug.Log("Loading server game... " + controlMan);
@@ -63,6 +66,7 @@ public class GameController : MonoBehaviour
     [RPC]
     public void LoadClientGame(bool controlMan)
     {
+        OnlineGame = true;
         this.controlMan = controlMan;
         Debug.Log("Loading client game... " + controlMan);
         Debug.Log("Loading client game... " + PlayerControlsMan);
@@ -89,7 +93,10 @@ public class GameController : MonoBehaviour
     public void Reset()
     {
         StartLevel("Menu");
-        NetworkView.RPC("ResetRequest", RPCMode.Others);
+        if (OnlineGame)
+        {
+            NetworkView.RPC("ResetRequest", RPCMode.Others);
+        }
     }
 
     [RPC]

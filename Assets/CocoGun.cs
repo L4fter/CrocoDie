@@ -39,7 +39,7 @@ public class CocoGun : MonoBehaviour
 		projectile = coconut.GetComponent<Coconut>();
 		projectile.Launch(dir);
 		Destroy(projectile.gameObject, 4);
-	    if (game.PlayerControlsMan)
+	    if (game.OnlineGame && game.PlayerControlsMan)
 	    {
             networkView.RPC("Shoot", RPCMode.Others, dir);	        
 	    }
