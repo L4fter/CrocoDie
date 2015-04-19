@@ -54,3 +54,6 @@ TagManager:
   - name: Front
     uniqueID: 3908846347
     locked: 0
+  - name: Coconuts
+    uniqueID: 507813479
+    locked: 0
