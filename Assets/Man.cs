@@ -77,7 +77,7 @@ public class Man : MonoBehaviour
 	private IEnumerator HighKickCoroutine()
 	{
 		isKicking = true;
-		yield return new WaitForSeconds(0.15f);
+		yield return new WaitForSeconds(0.25f);
 
 		foreach (var weaponCollider in WeaponColliders)
 		{
@@ -120,8 +120,8 @@ public class Man : MonoBehaviour
 
 	public void FallOver(float speed)
 	{
-		LeanTween.moveLocalX(this.gameObject, this.transform.localPosition.x + 20, 3);
-		LeanTween.rotateZ(this.gameObject, 180, 3);
+		LeanTween.moveLocalX(this.gameObject, this.transform.localPosition.x + 20, 10f/speed);
+		LeanTween.rotateZ(this.gameObject, 180, 10f/speed);
 		GameController.Instance.Loose(2);
 	}
 }

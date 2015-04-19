@@ -144,13 +144,29 @@ public class Croco : MonoBehaviour
 		}
 
 		LeanTween.cancel(this.gameObject);
+		var level = this.GetComponentInChildren<SpriteRenderer>().sortingOrder;
+		var myY = this.transform.position.y;
 		if (direction == Direction.Down)
 		{
-			targetVerticalPos = currentMap.GetLowerLineY(transform.position.y);
+			targetVerticalPos = currentMap.GetLowerLineY(myY);
+			if (targetVerticalPos != myY)
+			{
+				foreach (var child in this.GetComponentsInChildren<SpriteRenderer>())
+				{
+					child.sortingOrder += 5;
+				}
+			}
 		}
 		else
 		{
-			targetVerticalPos = currentMap.GetUpperLineY(transform.position.y);
+			targetVerticalPos = currentMap.GetUpperLineY(myY);
+			if (targetVerticalPos != myY)
+			{
+				foreach (var child in this.GetComponentsInChildren<SpriteRenderer>())
+				{
+					child.sortingOrder -= 5;
+				}
+			}
 		}
 
 		var dist = Mathf.Abs(this.targetVerticalPos - this.transform.position.y);

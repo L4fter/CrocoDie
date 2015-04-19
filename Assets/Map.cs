@@ -9,6 +9,12 @@ public class Map : MonoBehaviour
 
 	public float GetUpperLineY(float myY)
 	{
+		int level = 0;
+		return GetUpperLineY(myY, ref level);
+	}
+
+	public float GetUpperLineY(float myY, ref int level)
+	{
 		var objects = this.Lines.Where(o => o.transform.position.y > myY + 0.01f).ToList();
 		if (!objects.Any())
 		{
